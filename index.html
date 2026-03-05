@@ -1,0 +1,1756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CPO SIM 11 — Duolingo | CXO Simulabs</title>
+<meta name="description" content="Master data storytelling and presentations through Duolingo's pivotal decisions. A CPO Track simulation by CXO Simulabs.">
+<link rel="canonical" href="https://mohansimham.github.io/CPO-SIM-11-Duolingo/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="CPO SIM 11 — Duolingo | CXO Simulabs">
+<meta property="og:description" content="Master data storytelling and presentations through Duolingo's pivotal decisions. Test your product instincts through 10 real scenarios.">
+<meta property="og:url" content="https://mohansimham.github.io/CPO-SIM-11-Duolingo/">
+<meta property="og:site_name" content="CXO Simulabs">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CPO SIM 11 — Duolingo | CXO Simulabs">
+<meta name="twitter:description" content="Master data storytelling and presentations through Duolingo's pivotal decisions. Test your product instincts through 10 real scenarios.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"CPO SIM 11 — Duolingo","url":"https://mohansimham.github.io/CPO-SIM-11-Duolingo/","description":"Master data storytelling and presentations through Duolingo's pivotal decisions. A CPO Track simulation by CXO Simulabs.","applicationCategory":"Education","provider":{"@type":"Organization","name":"CXO Simulabs","url":"https://www.cxosimulabs.com"}}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z4J0M6TE3E"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Z4J0M6TE3E');</script>
+<style>
+:root {
+  --navy:#1a1a2e; --navy-mid:#16213e; --red:#e23744;
+  --accent:#58CC02; --accent-light:#edfce0;
+  --white:#fff; --light:#f7f7f9; --border:#e5e7eb;
+  --text:#1f2937; --muted:#6b7280;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:var(--light);color:var(--text);line-height:1.6;}
+.phase{display:none;}
+.phase.active{display:block;}
+
+/* NAV */
+.nav{background:var(--navy);padding:0 32px;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+.nav-logo{color:#fff;font-weight:800;font-size:1.1em;letter-spacing:.5px;}
+.nav-logo span{color:var(--red);}
+.nav-track{background:rgba(88,204,2,.15);border:1px solid rgba(88,204,2,.3);color:#7ddf3a;padding:4px 12px;border-radius:20px;font-size:.75em;font-weight:600;letter-spacing:1px;text-transform:uppercase;}
+.nav-sims{display:flex;gap:4px;}
+.nav-sim{color:#778;text-decoration:none;font-size:.78em;padding:4px 10px;border-radius:6px;transition:all .2s;}
+.nav-sim:hover{color:#fff;background:rgba(255,255,255,.08);}
+.nav-sim.current{color:var(--accent);font-weight:600;}
+
+/* HERO BAND */
+.sim-band{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);padding:48px 32px 40px;text-align:center;}
+.sim-band .eyebrow{display:inline-block;background:rgba(88,204,2,.15);border:1px solid rgba(88,204,2,.35);color:#7ddf3a;padding:5px 16px;border-radius:20px;font-size:.75em;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;margin-bottom:16px;}
+.sim-band h1{color:#fff;font-size:2em;font-weight:900;margin-bottom:8px;}
+.sim-band p{color:#778899;font-size:1em;max-width:520px;margin:0 auto;}
+
+/* CARD */
+.card{background:var(--white);border-radius:14px;padding:32px;box-shadow:0 2px 12px rgba(0,0,0,.06);max-width:620px;margin:0 auto;}
+.center-wrap{padding:40px 24px;}
+
+/* FORM */
+.form-group{margin-bottom:18px;}
+.form-group label{display:block;font-size:.85em;font-weight:600;color:var(--text);margin-bottom:6px;}
+.form-group input{width:100%;padding:12px 14px;border:2px solid var(--border);border-radius:8px;font-size:.95em;font-family:'Inter',sans-serif;transition:border-color .2s;outline:none;}
+.form-group input:focus{border-color:var(--accent);}
+.form-note{font-size:.8em;color:var(--muted);margin-top:8px;}
+.btn{display:inline-block;padding:13px 28px;border-radius:8px;font-weight:700;font-size:.95em;cursor:pointer;border:none;transition:all .2s;font-family:'Inter',sans-serif;}
+.btn-primary{background:var(--accent);color:#fff;width:100%;}
+.btn-primary:hover{background:#46a302;transform:translateY(-1px);}
+.btn-outline{background:transparent;border:2px solid var(--border);color:var(--text);}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent);}
+.btn-navy{background:var(--navy);color:#fff;width:100%;}
+.btn-navy:hover{background:var(--navy-mid);}
+.error-msg{color:#dc2626;font-size:.82em;margin-top:8px;display:none;}
+.success-msg{color:#059669;font-size:.82em;margin-top:8px;display:none;}
+
+/* OTP */
+.otp-input{letter-spacing:8px;font-size:1.4em;text-align:center;font-weight:700;}
+.otp-timer{font-size:.8em;color:var(--muted);text-align:center;margin-top:8px;}
+.resend-link{color:var(--accent);cursor:pointer;text-decoration:underline;}
+
+/* INTRO */
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0;}
+.intro-card{background:var(--light);border-radius:10px;padding:18px;border-left:3px solid var(--accent);}
+.intro-card h4{font-size:.88em;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.intro-card p{font-size:.82em;color:var(--muted);}
+.attempt-badge{display:inline-flex;align-items:center;gap:6px;background:var(--accent-light);color:var(--accent);padding:6px 14px;border-radius:20px;font-size:.82em;font-weight:700;margin-bottom:20px;}
+
+/* QUESTIONS */
+.q-wrap{max-width:760px;margin:0 auto;padding:32px 24px;}
+.progress-bar-wrap{background:var(--white);border-bottom:1px solid var(--border);padding:14px 32px;}
+.progress-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;max-width:760px;margin-left:auto;margin-right:auto;}
+.progress-label{font-size:.82em;font-weight:600;color:var(--muted);}
+.progress-track{height:5px;background:#e5e7eb;border-radius:3px;max-width:760px;margin:0 auto;}
+.progress-fill{height:5px;background:var(--accent);border-radius:3px;transition:width .4s ease;}
+.scenario-box{background:var(--white);border-radius:12px;padding:28px;margin-bottom:24px;border-left:4px solid var(--accent);}
+.scenario-label{font-size:.72em;text-transform:uppercase;letter-spacing:2px;color:var(--accent);font-weight:700;margin-bottom:10px;}
+.scenario-text{font-size:.93em;color:#374151;line-height:1.75;white-space:pre-line;}
+.scenario-text strong{display:block;color:var(--navy);font-weight:700;margin-top:14px;margin-bottom:4px;font-size:.95em;}
+.q-text{font-size:1.05em;font-weight:700;color:var(--navy);margin-bottom:20px;line-height:1.5;}
+.options{display:flex;flex-direction:column;gap:12px;}
+.option{background:var(--white);border:2px solid var(--border);border-radius:10px;padding:16px 18px;cursor:pointer;transition:all .2s;font-size:.93em;line-height:1.5;}
+.option:hover{border-color:var(--accent);background:var(--accent-light);}
+.option.locked{pointer-events:none;cursor:default;}
+.feedback-box{background:#f8fafc;border-radius:10px;padding:20px;margin-top:20px;border-left:3px solid var(--navy);font-size:.9em;color:#374151;line-height:1.7;}
+.feedback-box .fb-label{font-weight:700;color:var(--navy);margin-bottom:6px;font-size:.85em;text-transform:uppercase;letter-spacing:.5px;}
+.next-btn-wrap{margin-top:24px;text-align:right;}
+
+/* RESULTS */
+.results-wrap{max-width:800px;margin:0 auto;padding:40px 24px;}
+.score-ring-wrap{text-align:center;margin:24px 0;}
+.score-ring{position:relative;display:inline-block;}
+.score-ring canvas{display:block;}
+.score-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;}
+.score-num{font-size:2.4em;font-weight:900;color:var(--navy);}
+.score-pct{font-size:.85em;color:var(--muted);font-weight:600;}
+.tier-badge{display:inline-block;padding:8px 24px;border-radius:20px;font-weight:700;font-size:.95em;margin:12px 0;}
+.tier-mastery{background:#dcfce7;color:#166534;}
+.tier-proficiency{background:#dbeafe;color:#1e40af;}
+.tier-competency{background:#fef9c3;color:#854d0e;}
+.tier-foundational{background:#fee2e2;color:#991b1b;}
+.results-summary{background:var(--white);border-radius:12px;padding:24px;margin:20px 0;}
+.results-summary h3{font-size:1em;font-weight:700;color:var(--navy);margin-bottom:16px;}
+.q-result-row{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:.88em;}
+.q-result-row:last-child{border-bottom:none;}
+.q-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+.dot-high{background:#059669;}
+.dot-mid{background:#f59e0b;}
+.dot-low{background:#dc2626;}
+.cert-section{background:var(--white);border-radius:12px;padding:24px;margin:20px 0;text-align:center;}
+.cert-section h3{font-size:1em;font-weight:700;color:var(--navy);margin-bottom:16px;}
+#certCanvas{border-radius:8px;max-width:100%;box-shadow:0 4px 20px rgba(0,0,0,.1);}
+.cert-buttons{display:flex;gap:12px;justify-content:center;margin-top:16px;flex-wrap:wrap;}
+.cert-buttons .btn{width:auto;}
+
+/* HUB NAV */
+.hub-section{background:var(--navy);padding:60px 24px;}
+.hub-inner{max-width:800px;margin:0 auto;}
+.hub-section h3{color:#fff;font-size:1.2em;font-weight:700;margin-bottom:6px;}
+.hub-section p{color:#778899;font-size:.9em;margin-bottom:28px;}
+.hub-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;}
+.hub-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:18px;text-decoration:none;transition:all .2s;display:block;}
+.hub-card:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);transform:translateY(-2px);}
+.hub-card.current-sim{border-color:rgba(88,204,2,.5);background:rgba(88,204,2,.08);}
+.hub-card .hw{font-size:.72em;color:var(--red);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;}
+.hub-card .hco{color:#fff;font-weight:700;font-size:.95em;}
+.hub-card .htopic{color:#556677;font-size:.78em;margin-top:4px;}
+.hub-card .hstatus{font-size:.72em;margin-top:8px;font-weight:600;}
+.status-done{color:#4ade80;}
+.status-available{color:var(--accent);}
+.status-locked{color:#445566;}
+
+/* ATTEMPT 2 PROMPT */
+.attempt2-wrap{background:var(--white);border-radius:12px;padding:28px;margin:20px 0;text-align:center;border:2px solid var(--accent);}
+.attempt2-wrap h3{color:var(--navy);font-weight:800;font-size:1.1em;margin-bottom:8px;}
+.attempt2-wrap p{color:var(--muted);font-size:.9em;margin-bottom:20px;}
+
+/* BLOCKED */
+.blocked-wrap{text-align:center;padding:60px 24px;max-width:500px;margin:0 auto;}
+.blocked-icon{font-size:3em;margin-bottom:16px;}
+.blocked-wrap h2{color:var(--navy);font-weight:800;margin-bottom:10px;}
+.blocked-wrap p{color:var(--muted);font-size:.95em;margin-bottom:24px;}
+
+/* CUMULATIVE FEEDBACK */
+.cumulative-card{margin:20px 0;}
+.cumulative-card h3{font-size:1em;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.comp-bar-row{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+.comp-label{width:170px;font-size:.78em;font-weight:600;color:var(--text);flex-shrink:0;}
+.comp-track{flex:1;height:6px;background:#e5e7eb;border-radius:3px;overflow:hidden;}
+.comp-fill{height:6px;border-radius:3px;transition:width .6s ease;}
+.comp-pct{width:36px;font-size:.78em;font-weight:700;color:var(--muted);text-align:right;}
+.insight-box{margin-top:18px;background:var(--light);border-radius:10px;padding:18px;border-left:3px solid var(--accent);}
+.insight-label{font-size:.72em;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--accent);margin-bottom:8px;}
+.insight-text{font-size:.9em;color:#374151;line-height:1.75;}
+.strengths-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
+.strength-tag{background:rgba(5,150,105,.1);border:1px solid rgba(5,150,105,.25);color:#065f46;padding:4px 10px;border-radius:12px;font-size:.75em;font-weight:600;}
+.gap-tag{background:rgba(220,38,38,.08);border:1px solid rgba(220,38,38,.2);color:#991b1b;padding:4px 10px;border-radius:12px;font-size:.75em;font-weight:600;}
+
+/* NEXT SIM PROMO */
+.next-sim-banner{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);border-radius:12px;padding:20px 24px;margin:20px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.next-sim-banner h4{color:#fff;font-size:1em;font-weight:700;margin-bottom:4px;}
+.next-sim-banner p{color:#778899;font-size:.85em;}
+.btn-gold{background:linear-gradient(135deg,#c9a227,#e8c84a);color:#1a1a2e;font-weight:700;padding:10px 24px;border-radius:8px;border:none;cursor:pointer;font-size:.9em;text-decoration:none;display:inline-block;}
+.btn-gold:hover{opacity:.9;transform:translateY(-1px);}
+
+/* LEARN CARDS */
+.learn-wrap{max-width:620px;margin:0 auto;padding:32px 24px;}
+.learn-card{background:var(--white);border-radius:14px;padding:32px;box-shadow:0 2px 12px rgba(0,0,0,.06);display:none;}
+.learn-card.active{display:block;}
+.learn-card .learn-icon{font-size:2.4em;margin-bottom:16px;}
+.learn-card h3{font-size:1.15em;font-weight:800;color:var(--navy);margin-bottom:6px;}
+.learn-card .learn-subtitle{font-size:.85em;color:var(--accent);font-weight:600;margin-bottom:16px;}
+.learn-card p{font-size:.92em;color:#374151;line-height:1.75;margin-bottom:14px;}
+.learn-card .learn-apply{background:var(--accent-light);border-radius:10px;padding:18px;border-left:3px solid var(--accent);margin-top:16px;}
+.learn-card .learn-apply h4{font-size:.82em;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
+.learn-card .learn-apply p{font-size:.88em;color:#374151;margin-bottom:0;}
+.learn-card .learn-example{background:var(--light);border-radius:10px;padding:16px;margin-top:14px;}
+.learn-card .learn-example h4{font-size:.82em;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.learn-card .learn-example p{font-size:.85em;color:var(--muted);margin-bottom:0;font-style:italic;}
+.learn-card .learn-framework{background:#1a1a2e;border-radius:10px;padding:18px 20px;margin-top:14px;border-left:3px solid var(--accent);}
+.learn-card .learn-framework h4{font-size:.82em;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;}
+.learn-card .learn-framework ol{list-style:none;padding:0;margin:0;counter-reset:fw;}
+.learn-card .learn-framework ol li{counter-increment:fw;font-size:.84em;color:rgba(255,255,255,.75);padding:5px 0;border-bottom:1px solid rgba(255,255,255,.06);line-height:1.5;}
+.learn-card .learn-framework ol li:last-child{border-bottom:none;}
+.learn-card .learn-framework ol li::before{content:counter(fw) ". ";color:var(--accent);font-weight:700;}
+.learn-card .learn-framework ol li span{color:rgba(255,255,255,.4);font-size:.9em;}
+.learn-nav{display:flex;justify-content:space-between;align-items:center;margin-top:24px;}
+.learn-dots{display:flex;gap:8px;}
+.learn-dot{width:10px;height:10px;border-radius:50%;background:var(--border);transition:background .2s;}
+.learn-dot.active{background:var(--accent);}
+.learn-counter{font-size:.82em;color:var(--muted);font-weight:600;}
+
+/* SOURCES & DISCLAIMER */
+.sources-section{background:var(--white);border-radius:12px;padding:24px;margin:20px 0;}
+.sources-toggle{display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none;}
+.sources-toggle h3{font-size:1em;font-weight:700;color:var(--navy);margin:0;}
+.sources-toggle .toggle-icon{font-size:1.2em;color:var(--muted);transition:transform .2s;}
+.sources-toggle .toggle-icon.open{transform:rotate(180deg);}
+.sources-content{display:none;margin-top:16px;padding-top:16px;border-top:1px solid var(--border);}
+.sources-content.open{display:block;}
+.sources-content ul{list-style:none;padding:0;}
+.sources-content li{font-size:.85em;color:#374151;padding:6px 0;border-bottom:1px solid #f0f0f0;line-height:1.6;}
+.sources-content li:last-child{border-bottom:none;}
+.sources-content li a{color:var(--accent);text-decoration:none;}
+.sources-content li a:hover{text-decoration:underline;}
+.sources-content .disclaimer-text{font-size:.82em;color:var(--muted);line-height:1.7;margin-top:14px;padding:14px;background:var(--light);border-radius:8px;}
+
+/* FOOTER */
+footer{background:#0d1117;color:#445566;text-align:center;padding:24px;font-size:.8em;}
+footer a{color:#556677;text-decoration:none;}
+
+@media(max-width:600px){
+  .nav-sims{display:none;}
+  .intro-grid{grid-template-columns:1fr;}
+  .sim-band h1{font-size:1.6em;}
+  .cert-buttons{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo" id="nav-logo" onclick="founderTap()">CXO <span>Simulabs</span></div>
+  <div class="nav-track">CPO Track</div>
+  <div class="nav-sims">
+    <a href="https://mohansimham.github.io/CPO-SIM-1-Airbnb/" class="nav-sim">SIM 1</a>
+    <a href="https://mohansimham.github.io/CPO-SIM-2-Spotify/" class="nav-sim">SIM 2</a>
+    <a href="https://mohansimham.github.io/CPO-SIM-3-Netflix/" class="nav-sim">SIM 3</a>
+    <a href="https://mohansimham.github.io/CPO-SIM-4-Amazon/" class="nav-sim">SIM 4</a>
+    <a href="https://mohansimham.github.io/CPO-SIM-5-Uber/" class="nav-sim">SIM 5</a>
+    <a href="https://mohansimham.github.io/CPO-SIM-6-Zomato/" class="nav-sim">SIM 6</a>
+    <a href="https://mohansimham.github.io/CPO-SIM-7-Slack/" class="nav-sim">SIM 7</a>
+    <a href="https://mohansimham.github.io/CPO-SIM-8-Google/" class="nav-sim">SIM 8</a>
+    <a href="https://mohansimham.github.io/CPO-SIM-9-Meta/" class="nav-sim">SIM 9</a>
+    <a href="https://mohansimham.github.io/CPO-SIM-10-Shopify/" class="nav-sim">SIM 10</a>
+    <a href="#" class="nav-sim current">SIM 11</a>
+  </div>
+</nav>
+
+<!-- PHASE: BLOCKED -->
+<div id="phase-blocked" class="phase">
+  <div class="sim-band"><div class="eyebrow">CPO Simulation 11 · Duolingo</div><h1>Duolingo: Data Storytelling & Presentations</h1></div>
+  <div class="center-wrap">
+    <div class="blocked-wrap">
+      <div class="blocked-icon">🔒</div>
+      <h2>Both Attempts Used</h2>
+      <p>You've completed both attempts for this simulation. Each simulation allows 2 attempts to give you a chance to improve your score.</p>
+      <p style="margin-top:16px;color:var(--accent);font-weight:600;">Ready for your next challenge?</p>
+      <div style="margin-top:24px;">
+        <a href="https://mohansimham.github.io/CPO-SIM-1-Airbnb/" class="btn btn-navy" style="display:inline-block;text-decoration:none;width:auto;">Try SIM 1 — Airbnb →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE: EMAIL GATE -->
+<div id="phase-email" class="phase">
+  <div class="sim-band">
+    <div class="eyebrow">CPO Simulation 11 · Duolingo</div>
+    <h1>Duolingo: Data Storytelling & Presentations</h1>
+    <p>10 pivotal moments. Real product decisions. How would you have built it?</p>
+  </div>
+  <div class="center-wrap">
+    <div class="card">
+      <h2 style="font-size:1.2em;font-weight:800;color:var(--navy);margin-bottom:6px;">Let's get started</h2>
+      <p style="font-size:.88em;color:var(--muted);margin-bottom:24px;">We'll send your personalised certificate to your email when you complete the simulation.</p>
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" id="input-name" placeholder="First and last name" autocomplete="name">
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" id="input-email" placeholder="your@email.com" autocomplete="email">
+        <div class="form-note">Used to send your certificate and improve your experience. No spam.</div>
+      </div>
+      <div id="email-error" class="error-msg">Please enter a valid name and email address.</div>
+      <button class="btn btn-primary" onclick="sendOTP()" id="send-otp-btn" style="margin-top:8px;">Send Verification Code →</button>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE: OTP -->
+<div id="phase-otp" class="phase">
+  <div class="sim-band">
+    <div class="eyebrow">CPO Simulation 11 · Duolingo</div>
+    <h1>Check Your Email</h1>
+    <p>Enter the 6-digit code we just sent you.</p>
+  </div>
+  <div class="center-wrap">
+    <div class="card">
+      <h2 style="font-size:1.1em;font-weight:800;color:var(--navy);margin-bottom:6px;">Verify your email</h2>
+      <p style="font-size:.88em;color:var(--muted);margin-bottom:24px;">Code sent to <strong id="otp-email-display"></strong>. Expires in <span id="otp-timer">10:00</span>.</p>
+      <div class="form-group">
+        <label>Verification Code</label>
+        <input type="text" id="input-otp" class="otp-input" placeholder="000000" maxlength="6" inputmode="numeric">
+      </div>
+      <div id="otp-error" class="error-msg">Incorrect code. Please try again.</div>
+      <div id="otp-success" class="success-msg">✓ Email verified!</div>
+      <button class="btn btn-primary" onclick="verifyOTP()" style="margin-top:8px;">Verify & Start Simulation →</button>
+      <p style="font-size:.82em;color:var(--muted);margin-top:14px;text-align:center;">Didn't get it? <span class="resend-link" onclick="resendOTP()">Resend code</span></p>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE: INTRO -->
+<div id="phase-intro" class="phase">
+  <div class="sim-band">
+    <div class="eyebrow">CPO Simulation 11 · Duolingo</div>
+    <h1>Duolingo: Data Storytelling & Presentations</h1>
+    <p>You're the Product Manager. 10 real scenarios. What do you decide?</p>
+  </div>
+  <div class="center-wrap">
+    <div class="card">
+      <div id="attempt-badge-display" class="attempt-badge">🎯 Attempt 1 of 2</div>
+      <h2 style="font-size:1.1em;font-weight:800;color:var(--navy);margin-bottom:10px;">What you'll be tested on</h2>
+      <div class="intro-grid">
+        <div class="intro-card"><h4>Data Narrative Design</h4><p>Crafting compelling stories from product metrics and user behaviour data that drive decisions.</p></div>
+        <div class="intro-card"><h4>Choosing Visualisations</h4><p>Selecting the right charts, graphs, and visual formats for different audiences and insights.</p></div>
+        <div class="intro-card"><h4>Audience-First Presentations</h4><p>Tailoring data presentations to executives, engineers, academics, and cross-functional teams.</p></div>
+        <div class="intro-card"><h4>Metrics That Matter</h4><p>Identifying and communicating the metrics that capture real user value and drive product decisions.</p></div>
+      </div>
+      <p style="font-size:.85em;color:var(--muted);margin-bottom:20px;">10 questions · Multiple choice · Feedback after every answer · ~15 minutes</p>
+      <button class="btn btn-primary" onclick="showPhase('learn')">Continue →</button>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE: LEARN -->
+<div id="phase-learn" class="phase">
+  <div class="sim-band">
+    <div class="eyebrow">CPO Simulation 11 · Duolingo</div>
+    <h1>Before You Begin</h1>
+    <p>A quick refresher on the frameworks you'll apply in this simulation.</p>
+  </div>
+  <div class="learn-wrap">
+
+  <div class="learn-wrap">
+
+    <div class="learn-card active" data-learn="0">
+      <div class="learn-icon">📊</div>
+      <h3>The Data Storytelling Arc</h3>
+      <div class="learn-subtitle">Context → Tension → Resolution: narrative structure for product data</div>
+      <p>Most data presentations fail not because the data is wrong, but because there's no story. A spreadsheet of numbers doesn't move people to action — a narrative does. The Data Storytelling Arc follows a three-act structure: Context (what's the situation and why should we care?), Tension (what's the problem or surprising insight the data reveals?), and Resolution (what should we do about it?). This transforms data from passive information into a compelling argument for action.</p>
+      <div class="learn-apply">
+        <h4>How to apply it</h4>
+        <p>Start every data presentation by establishing stakes: who is affected, and what happens if we do nothing? Then introduce the tension — the metric that's declining, the user segment that's struggling, or the opportunity we're missing. Only then present your recommendation with supporting data. End with a clear ask: the decision you need, the resources you're requesting, or the alignment you're seeking. Never start with methodology.</p>
+      </div>
+      <div class="learn-example">
+        <h4>Example</h4>
+        <p>When Duolingo presented its streak feature impact to the board, the team didn't start with "streak retention data by cohort." They started with context: "65% of language learners quit within the first week." Tension: "But users who maintain a 7-day streak are 3.5x more likely to become paying subscribers." Resolution: "We're investing in streak-preservation mechanics — freeze streaks, streak rewards, and social accountability — projected to increase D30 retention by 12%." The board approved the investment in one meeting.</p>
+      </div>
+      <div class="learn-framework">
+        <h4>Data Storytelling Arc Template</h4>
+        <ol>
+          <li>Context <span>— What's the current situation? Why does this matter to the audience? What's at stake?</span></li>
+          <li>Tension <span>— What surprising insight does the data reveal? What's broken, declining, or being missed?</span></li>
+          <li>Supporting Evidence <span>— 2-3 data points that validate the tension. Use the strongest, not the most.</span></li>
+          <li>Resolution <span>— What do you recommend? What's the expected impact? Quantify the upside.</span></li>
+          <li>Trade-offs <span>— What are we choosing NOT to do? What's the risk of this path? Be honest about uncertainty.</span></li>
+          <li>The Ask <span>— Be explicit: what decision do you need? What resources? What approval? Never end ambiguously.</span></li>
+          <li>One-Sentence Summary <span>— If they remember nothing else, what's the one takeaway? Put it on the first and last slide.</span></li>
+        </ol>
+      </div>
+      <div class="learn-nav">
+        <span class="learn-counter">1 of 4</span>
+        <div class="learn-dots"><span class="learn-dot active"></span><span class="learn-dot"></span><span class="learn-dot"></span><span class="learn-dot"></span></div>
+        <button class="btn btn-primary" style="width:auto;padding:10px 24px;" onclick="nextLearnCard()">Next →</button>
+      </div>
+    </div>
+
+    <div class="learn-card" data-learn="1">
+      <div class="learn-icon">📈</div>
+      <h3>Choosing the Right Visualisation</h3>
+      <div class="learn-subtitle">The chart you pick shapes the story people hear</div>
+      <p>A line chart says "this is changing over time." A bar chart says "compare these things." A pie chart says "here's the composition." The visualisation you choose isn't neutral — it frames how your audience interprets the data. The wrong chart can hide insights or, worse, imply patterns that don't exist. Product managers must match the chart type to the story they're telling: trends, comparisons, distributions, compositions, or relationships.</p>
+      <div class="learn-apply">
+        <h4>How to apply it</h4>
+        <p>Before creating any chart, ask: "What's the one insight this visual needs to communicate?" For trends over time, use line charts. For comparing categories, use horizontal bar charts. For part-of-whole relationships, use stacked bars (not pie charts — they're almost always worse). For correlations, use scatter plots. For funnels, use funnel charts. Always label axes, include units, and add a descriptive title that states the insight, not just the metric name.</p>
+      </div>
+      <div class="learn-example">
+        <h4>Example</h4>
+        <p>Duolingo's growth team needed to show the board why push notification timing mattered. A table of send-time vs. open-rate data was forgettable. Instead, they used a heat map showing engagement by hour and day — a clear visual pattern emerged showing 8-9am and 7-8pm as engagement peaks. The insight was instant: "We're sending 40% of notifications outside peak windows." The board immediately approved investment in ML-based send-time optimisation.</p>
+      </div>
+      <div class="learn-framework">
+        <h4>Visualisation Selection Guide</h4>
+        <ol>
+          <li>Define the Insight <span>— What's the ONE thing this chart must communicate? Write it as a sentence before choosing a chart type.</span></li>
+          <li>Match Chart to Story <span>— Trend = line. Comparison = bar. Composition = stacked bar. Distribution = histogram. Correlation = scatter.</span></li>
+          <li>Reduce Clutter <span>— Remove gridlines, reduce colours, eliminate legends when labels work. Every pixel should earn its place.</span></li>
+          <li>Highlight the Signal <span>— Use colour, annotation, or callouts to draw the eye to the key insight. Grey out everything else.</span></li>
+          <li>Title = Insight <span>— Don't title charts "Revenue by Quarter." Title them "Revenue grew 23% YoY, driven by subscription tier changes."</span></li>
+          <li>Accessible Design <span>— Use colourblind-safe palettes, adequate font sizes, and alt text. 8% of men are colourblind.</span></li>
+          <li>Test Comprehension <span>— Show the chart to someone for 5 seconds. Can they state the insight? If not, redesign it.</span></li>
+        </ol>
+      </div>
+      <div class="learn-nav">
+        <span class="learn-counter">2 of 4</span>
+        <div class="learn-dots"><span class="learn-dot"></span><span class="learn-dot active"></span><span class="learn-dot"></span><span class="learn-dot"></span></div>
+        <button class="btn btn-primary" style="width:auto;padding:10px 24px;" onclick="nextLearnCard()">Next →</button>
+      </div>
+    </div>
+
+    <div class="learn-card" data-learn="2">
+      <div class="learn-icon">🎯</div>
+      <h3>The Pyramid Principle</h3>
+      <div class="learn-subtitle">Lead with the answer — executives don't have time for build-up</div>
+      <p>Barbara Minto's Pyramid Principle flips the natural way most people present data. Instead of building up from evidence to conclusion (bottom-up), you start with the conclusion and then support it with evidence (top-down). Executives scanning a deck need to know your recommendation in the first 30 seconds. If they want to dig deeper, the supporting data is there — but the story works even if they only read the headlines. This is the single most important skill for presenting to senior leadership.</p>
+      <div class="learn-apply">
+        <h4>How to apply it</h4>
+        <p>Structure every presentation as: (1) Recommendation/conclusion on slide 1, (2) Three supporting arguments on slides 2-4, (3) Evidence for each argument in an appendix. Each slide title should be a complete sentence that states the insight — reading just the titles should tell the full story. If an executive reads nothing but your slide titles and still understands your argument, you've applied the Pyramid Principle correctly.</p>
+      </div>
+      <div class="learn-example">
+        <h4>Example</h4>
+        <p>When Duolingo's product team proposed launching Duolingo Math, they didn't start with market research slides. Slide 1: "We should launch Duolingo Math — it addresses a $4B market with our existing gamification engine and 50M monthly active users." Slide 2: "Math learning has the same dropout problem we solved for languages." Slide 3: "Our gamification mechanics transfer directly — no new R&D needed." Slide 4: "50M existing users provide zero-CAC distribution." Evidence and methodology were in the appendix for anyone who wanted to dig deeper.</p>
+      </div>
+      <div class="learn-framework">
+        <h4>Pyramid Principle Template</h4>
+        <ol>
+          <li>Lead with the Answer <span>— State your recommendation or conclusion first. Don't make the audience wait for it.</span></li>
+          <li>Three Supporting Pillars <span>— Group evidence into 3 (max 4) mutually exclusive, collectively exhaustive arguments.</span></li>
+          <li>Slide Titles = Story <span>— Each title is a complete sentence. Reading only titles should convey the full argument.</span></li>
+          <li>So-What Test <span>— For every data point, ask "so what?" If you can't connect it to the recommendation, cut it.</span></li>
+          <li>Appendix for Depth <span>— Methodology, raw data, edge cases, and sensitivity analyses go in the appendix, not the main deck.</span></li>
+          <li>Situation-Complication-Resolution <span>— For the opening: What's the situation? What changed (complication)? What should we do?</span></li>
+          <li>Pre-Wire Key Stakeholders <span>— Share your recommendation with key decision-makers before the meeting. Presentations confirm, not surprise.</span></li>
+        </ol>
+      </div>
+      <div class="learn-nav">
+        <span class="learn-counter">3 of 4</span>
+        <div class="learn-dots"><span class="learn-dot"></span><span class="learn-dot"></span><span class="learn-dot active"></span><span class="learn-dot"></span></div>
+        <button class="btn btn-primary" style="width:auto;padding:10px 24px;" onclick="nextLearnCard()">Next →</button>
+      </div>
+    </div>
+
+    <div class="learn-card" data-learn="3">
+      <div class="learn-icon">📋</div>
+      <h3>Metrics That Matter</h3>
+      <div class="learn-subtitle">Choose the metric that drives the right behaviour, not just the biggest number</div>
+      <p>Vanity metrics make you feel good but don't drive decisions. Actionable metrics tell you what to do differently. The difference between "10 million downloads" and "D30 retention is 15% and declining" is the difference between a press release and a product strategy. Product managers must ruthlessly select the metrics that reflect real user value and business health — and then present them in a way that connects to company goals.</p>
+      <div class="learn-apply">
+        <h4>How to apply it</h4>
+        <p>For every metric you present, apply the "so what" test: does this metric tell us what to do next? If not, replace it with one that does. Use input metrics (things you can control) alongside output metrics (things you're trying to achieve). Always show metrics in context: benchmarks, trends, and comparisons. A number without context is just a number. And always pair a metric with the lever — "D7 retention is 42% (below our 50% target). The primary lever is onboarding completion, which is at 61%."</p>
+      </div>
+      <div class="learn-example">
+        <h4>Example</h4>
+        <p>Duolingo famously shifted its North Star metric from "registered users" to "daily active users" (DAU). Registered users looked impressive for investor decks (500M+) but masked a retention crisis — most users quit within days. DAU forced every team to focus on what actually mattered: getting users to come back tomorrow. This metric shift led directly to the streak system, push notification optimisation, and leaderboards — the features that drove Duolingo's IPO valuation from "language app" to "habit-forming platform."</p>
+      </div>
+      <div class="learn-framework">
+        <h4>Metric Selection Framework</h4>
+        <ol>
+          <li>North Star Metric <span>— One metric that captures the core value your product delivers. DAU, not downloads. Revenue per user, not revenue.</span></li>
+          <li>Input vs. Output <span>— Pair every output metric (retention) with input metrics you can influence (onboarding completion, notification opt-in).</span></li>
+          <li>Leading vs. Lagging <span>— Leading indicators predict the future (activation rate). Lagging indicators confirm the past (churn). You need both.</span></li>
+          <li>Vanity Check <span>— Does this metric change our behaviour if it moves? If not, it's vanity. Cut it from the dashboard.</span></li>
+          <li>Context Always <span>— Show vs. prior period, vs. target, vs. benchmark. A number alone is meaningless.</span></li>
+          <li>Metric + Lever <span>— For every metric, name the lever. "D7 retention is 42%. Lever: onboarding completion (currently 61%)."</span></li>
+          <li>Review Cadence <span>— Which metrics are daily (ops), weekly (tactical), monthly (strategic), quarterly (board)? Match frequency to action.</span></li>
+        </ol>
+      </div>
+      <div class="learn-nav">
+        <span class="learn-counter">4 of 4</span>
+        <div class="learn-dots"><span class="learn-dot"></span><span class="learn-dot"></span><span class="learn-dot"></span><span class="learn-dot active"></span></div>
+        <button class="btn btn-primary" style="width:auto;padding:10px 24px;" onclick="startSim()">Start Simulation →</button>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+</div>
+
+<!-- PHASE: QUESTIONS -->
+<div id="phase-questions" class="phase">
+  <div class="progress-bar-wrap">
+    <div class="progress-top">
+      <span class="progress-label" id="q-progress-label">Question 1 of 10</span>
+      <span class="progress-label" id="q-score-label">Score: 0</span>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+  </div>
+  <div class="q-wrap">
+    <div class="scenario-box">
+      <div class="scenario-label">Scenario</div>
+      <div class="scenario-text" id="q-scenario"></div>
+    </div>
+    <div class="q-text" id="q-question"></div>
+    <div class="options" id="q-options"></div>
+    <div class="feedback-box" id="q-feedback" style="display:none;">
+      <div class="fb-label">Expert Analysis</div>
+      <div id="q-feedback-text"></div>
+    </div>
+    <div class="next-btn-wrap">
+      <button class="btn btn-navy" id="next-btn" onclick="nextQuestion()" style="display:none;">Next Question →</button>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE: RESULTS -->
+<div id="phase-results" class="phase">
+  <div class="sim-band">
+    <div class="eyebrow">Simulation Complete</div>
+    <h1 id="results-heading">Your Results</h1>
+  </div>
+  <div class="results-wrap">
+
+    <div class="card" style="text-align:center;margin-bottom:20px;">
+      <div class="score-ring-wrap">
+        <div class="score-ring">
+          <canvas id="scoreRingCanvas" width="160" height="160"></canvas>
+          <div class="score-center">
+            <div class="score-num" id="result-pct">0%</div>
+            <div class="score-pct" id="result-score-label">0 / 0</div>
+          </div>
+        </div>
+      </div>
+      <div class="tier-badge" id="tier-badge">Strategic Mastery</div>
+      <p id="tier-feedback" style="color:var(--muted);font-size:.9em;max-width:480px;margin:0 auto;"></p>
+    </div>
+
+    <!-- Next Sim Banner (prominent) -->
+    <div class="next-sim-banner" id="next-sim-banner" style="display:none;">
+      <div>
+        <h4>Up next: SIM 1 — Airbnb</h4>
+        <p>Platform Decisions · Strategic Thinking · Stakeholder Management · 10 new decisions</p>
+      </div>
+      <a href="https://mohansimham.github.io/CPO-SIM-1-Airbnb/" class="btn-gold">Start SIM 1 →</a>
+    </div>
+
+    <div class="results-summary">
+      <h3>Decision Analysis — Expert Feedback on Every Choice</h3>
+      <div id="q-breakdown"></div>
+    </div>
+
+    <!-- Cumulative Feedback -->
+    <div class="card cumulative-card" id="cumulative-section">
+      <h3>Your CPO Profile</h3>
+      <p style="font-size:.82em;color:var(--muted);margin-bottom:20px;">Based on your decision patterns across all 10 scenarios</p>
+      <div id="competency-bars"></div>
+      <div class="insight-box">
+        <div class="insight-label">Strategic Insight</div>
+        <div class="insight-text" id="insight-text"></div>
+        <div style="margin-top:14px;">
+          <div style="font-size:.75em;font-weight:700;color:#059669;margin-bottom:6px;">STRENGTHS</div>
+          <div class="strengths-row" id="strength-tags"></div>
+        </div>
+        <div style="margin-top:12px;">
+          <div style="font-size:.75em;font-weight:700;color:#dc2626;margin-bottom:6px;">DEVELOP FURTHER</div>
+          <div class="strengths-row" id="gap-tags"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Attempt 2 prompt (shown if attempt 1 done) -->
+    <div class="attempt2-wrap" id="attempt2-prompt" style="display:none;">
+      <h3>Try Attempt 2?</h3>
+      <p>Different questions, same competencies. Can you improve your score?</p>
+      <button class="btn btn-primary" onclick="startAttempt2()" style="width:auto;padding:12px 32px;">Start Attempt 2 →</button>
+    </div>
+
+    <div class="cert-section">
+      <h3>Your Certificate</h3>
+      <p style="font-size:.82em;color:var(--muted);margin-bottom:16px;">Download the certificate for LinkedIn or the square badge for Instagram, WhatsApp and other social media.</p>
+      <canvas id="certCanvas" width="1200" height="850"></canvas>
+      <div class="cert-buttons" style="margin-top:14px;">
+        <button class="btn btn-navy" onclick="downloadCert()" style="width:auto;">↓ Certificate (LinkedIn)</button>
+        <button class="btn btn-navy" onclick="downloadBadge()" style="width:auto;">↓ Badge (Instagram)</button>
+        <button class="btn btn-outline" onclick="shareLinkedIn()" style="width:auto;">Share LinkedIn</button>
+        <button class="btn btn-outline" onclick="shareTwitter()" style="width:auto;">Share X / Twitter</button>
+        <button class="btn btn-outline" onclick="shareWhatsApp()" style="width:auto;">Share WhatsApp</button>
+        <button class="btn btn-outline" onclick="copyLink()" style="width:auto;" id="copy-link-btn">Copy Link</button>
+      </div>
+      <!-- Hidden badge canvas -->
+      <canvas id="badgeCanvas" width="1080" height="1080" style="display:none;"></canvas>
+    </div>
+
+    <!-- Sources & Disclaimer -->
+    <div class="sources-section">
+      <div class="sources-toggle" onclick="this.querySelector('.toggle-icon').classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
+        <h3>Sources & Disclaimer</h3>
+        <span class="toggle-icon">▼</span>
+      </div>
+      <div class="sources-content">
+        <ul>
+          <li>Duolingo Inc. SEC Filings — S-1, 10-K Annual Reports, investor presentations — <a href="https://investors.duolingo.com/" target="_blank">investors.duolingo.com</a></li>
+          <li>Duolingo Blog — product updates, research findings, company announcements — <a href="https://blog.duolingo.com/" target="_blank">blog.duolingo.com</a></li>
+          <li>Duolingo Research — published papers on learning effectiveness, AI/ML, and gamification — <a href="https://research.duolingo.com/" target="_blank">research.duolingo.com</a></li>
+          <li>Luis von Ahn interviews and talks — CEO perspectives on growth, gamification, and AI strategy</li>
+          <li>Duolingo Engineering Blog — Birdbrain AI, personalisation, and technical architecture</li>
+          <li>Sensor Tower, App Annie, and Data.ai reports on Duolingo's app store performance and market position</li>
+          <li>Industry analyses from CB Insights, Gartner, and education technology research on language learning markets</li>
+        </ul>
+        <div class="disclaimer-text">
+          <strong>Disclaimer:</strong> CXO Simulabs is an independent educational platform. Duolingo and related marks are trademarks of Duolingo Inc. This simulation is not affiliated with, endorsed by, or sponsored by Duolingo Inc. All scenarios are inspired by publicly available information and may include dramatised elements for educational purposes. Dialogue attributed to individuals is fictional and does not represent actual statements. Financial figures are from public filings and published reports where available; some figures are approximations used for educational purposes. This is not a professional certification or accreditation.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- HUB NAV -->
+  <div class="hub-section">
+    <div class="hub-inner">
+      <h3>CPO Track — All Simulations</h3>
+      <p>Each simulation tests a different set of CPO competencies. Start anywhere.</p>
+      <div class="hub-grid">
+        <a href="https://mohansimham.github.io/CPO-SIM-1-Airbnb/" class="hub-card">
+          <div class="hw">SIM 1</div>
+          <div class="hco">Airbnb</div>
+          <div class="htopic">Strategic Thinking · Stakeholder Mgmt · Risk</div>
+          <div class="hstatus status-available">→ Play now</div>
+        </a>
+        <a href="https://mohansimham.github.io/CPO-SIM-2-Spotify/" class="hub-card">
+          <div class="hw">SIM 2</div>
+          <div class="hco">Spotify</div>
+          <div class="htopic">Business Model · Porter's Five Forces · OKRs</div>
+          <div class="hstatus status-available">→ Play now</div>
+        </a>
+        <a href="https://mohansimham.github.io/CPO-SIM-3-Netflix/" class="hub-card">
+          <div class="hw">SIM 3</div>
+          <div class="hco">Netflix</div>
+          <div class="htopic">Jobs-to-Be-Done · A/B Testing · User Research</div>
+          <div class="hstatus status-available">→ Play now</div>
+        </a>
+        <a href="https://mohansimham.github.io/CPO-SIM-4-Amazon/" class="hub-card">
+          <div class="hw">SIM 4</div>
+          <div class="hco">Amazon Prime</div>
+          <div class="htopic">RICE · MoSCoW · Kano Model</div>
+          <div class="hstatus status-available">→ Play now</div>
+        </a>
+        <a href="https://mohansimham.github.io/CPO-SIM-5-Uber/" class="hub-card">
+          <div class="hw">SIM 5</div>
+          <div class="hco">Uber</div>
+          <div class="htopic">Market Sizing · Unit Economics · 5 Whys</div>
+          <div class="hstatus status-available">→ Play now</div>
+        </a>
+        <a href="https://mohansimham.github.io/CPO-SIM-6-Zomato/" class="hub-card">
+          <div class="hw">SIM 6</div>
+          <div class="hco">Zomato</div>
+          <div class="htopic">RICE · MoSCoW · Kano · ICE Scoring</div>
+          <div class="hstatus status-available">→ Play now</div>
+        </a>
+        <a href="https://mohansimham.github.io/CPO-SIM-7-Slack/" class="hub-card">
+          <div class="hw">SIM 7</div>
+          <div class="hco">Slack</div>
+          <div class="htopic">Rapid Prototyping · MVP · Pivot Strategy</div>
+          <div class="hstatus status-available">→ Play now</div>
+        </a>
+        <a href="https://mohansimham.github.io/CPO-SIM-8-Google/" class="hub-card">
+          <div class="hw">SIM 8</div>
+          <div class="hco">Google</div>
+          <div class="htopic">PRDs · Design Docs · Launch Review</div>
+          <div class="hstatus status-available">→ Play now</div>
+        </a>
+        <a href="https://mohansimham.github.io/CPO-SIM-9-Meta/" class="hub-card">
+          <div class="hw">SIM 9</div>
+          <div class="hco">Meta</div>
+          <div class="htopic">AI Feature Design · ML Lifecycle · AI Safety</div>
+          <div class="hstatus status-available">→ Play now</div>
+        </a>
+        <a href="https://mohansimham.github.io/CPO-SIM-10-Shopify/" class="hub-card">
+          <div class="hw">SIM 10</div>
+          <div class="hco">Shopify</div>
+          <div class="htopic">Roadmapping · Prioritisation · Platform Evolution</div>
+          <div class="hstatus status-available">→ Play now</div>
+        </a>
+        <div class="hub-card current-sim">
+          <div class="hw">SIM 11 · Current</div>
+          <div class="hco">Duolingo</div>
+          <div class="htopic">Data Storytelling · Visualisation · Metrics</div>
+          <div class="hstatus status-done">✓ Completed</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 CXO Simulabs · <a href="https://www.cxosimulabs.com">cxosimulabs.com</a> · <a href="https://www.cxosimulabs.com/privacy.html">Privacy</a> · <a href="https://www.cxosimulabs.com/terms.html">Terms</a></p>
+    <p style="margin-top:8px;font-size:.75em;color:#334455;max-width:700px;margin-left:auto;margin-right:auto;line-height:1.6;">CXO Simulabs is an independent educational platform. Duolingo and related marks are trademarks of Duolingo Inc. This simulation is not affiliated with, endorsed by, or sponsored by Duolingo Inc. Scenarios are inspired by publicly available information and may include dramatised elements for educational purposes. This is not a professional certification. All dialogue is fictional and does not represent actual statements by any named individual.</p>
+  </footer>
+</div>
+
+<script>
+// ─── FOUNDER MODE ─────────────────────────────────────────
+let _founderTaps=0, _founderTimer=null;
+function founderTap(){
+  _founderTaps++;
+  clearTimeout(_founderTimer);
+  _founderTimer=setTimeout(()=>_founderTaps=0,600);
+  if(_founderTaps>=3){ enterFounderMode(); _founderTaps=0; }
+}
+function enterFounderMode(){
+  Object.values(LS).forEach(k=>localStorage.removeItem(k));
+  state.name='Founder Preview';
+  state.email='founder@cxosimulabs.com';
+  state.currentAttempt=1;
+  // Badge
+  if(!document.getElementById('founder-badge')){
+    const b=document.createElement('div');
+    b.id='founder-badge';
+    b.style.cssText='position:fixed;bottom:16px;right:16px;background:#1a1a2e;color:#fff;padding:8px 16px;border-radius:8px;font-size:.78em;font-weight:600;z-index:9999;border:1px solid rgba(226,55,68,.4);cursor:pointer;';
+    b.innerHTML='🔧 Founder Preview &nbsp;<span style="color:#e23744;" onclick="exitFounderMode()">✕ Exit</span>';
+    document.body.appendChild(b);
+  }
+  document.getElementById('attempt-badge-display').textContent='🔧 Preview Mode';
+  showPhase('intro');
+}
+function exitFounderMode(){
+  const b=document.getElementById('founder-badge');
+  if(b) b.remove();
+  location.reload();
+}
+
+// ─── COMPETENCY MAP ───────────────────────────────────────
+const COMP_MAP = [
+  {name:'Data Narrative Design'},
+  {name:'Metric Selection'},
+  {name:'Visualisation Design'},
+  {name:'Audience Adaptation'},
+  {name:'Insight Extraction'},
+  {name:'Executive Communication'},
+  {name:'Dashboard Storytelling'},
+  {name:'A/B Test Reporting'},
+  {name:'Stakeholder Persuasion'},
+  {name:'Data-Driven Culture'},
+];
+
+// ─── CONFIG ───────────────────────────────────────────────
+const EJS_KEY      = 'ABWpMkWPOTsO_gQWG';
+const EJS_SERVICE  = 'service_a6x573k';
+const EJS_TEMPLATE = 'template_xt90q9j';
+emailjs.init(EJS_KEY);
+
+const LS = {
+  name:      'cxo_cpo11_name',
+  email:     'cxo_cpo11_email',
+  attempts:  'cxo_cpo11_attempts',
+  scores:    'cxo_cpo11_scores',
+};
+
+// ─── STATE ────────────────────────────────────────────────
+let state = {
+  name:'', email:'',
+  otp:'', otpExpiry:0, otpAttempts:0,
+  timerInterval:null,
+  currentAttempt:1,
+  currentQ:0,
+  answers:[],
+  totalScore:0, maxScore:0,
+};
+
+// ─── QUESTIONS ────────────────────────────────────────────
+const Q = {
+  1: [
+    {
+      scenario:`2019 — The North Star Metric Shift\n\nDuolingo has 300 million registered users, which looks impressive in press releases and investor decks. But the product team knows the truth: most users download the app, try one lesson, and never return. The retention curve is brutal — 60% of users churn within the first week.\n\nThe CEO asks you to present at the all-hands meeting on "the state of growth." You have two choices for framing the story: lead with the 300M registered users number (which makes everyone feel good) or lead with the DAU/MAU ratio (which reveals the retention crisis but creates urgency for change).\n\nYour presentation will set the company's priorities for the next year.`,
+      question:`How do you frame the growth narrative at the all-hands?`,
+      options:[
+        {text:`Lead with 300M registered users, then mention retention as an "area of improvement" on a later slide.`, score:1, feedback:`Leading with vanity metrics undermines trust. When the retention crisis eventually surfaces (and it will), the team will question why leadership buried the real story. Starting with the impressive number creates complacency when urgency is needed.`},
+        {text:`Lead with the DAU/MAU ratio (14%), benchmark it against top consumer apps (25-30%), and frame the gap as the company's biggest growth opportunity.`, score:3, feedback:`This is textbook data storytelling — Context (we have 300M users), Tension (but only 14% are active daily vs. 25-30% benchmark), Resolution (closing this gap = 2-3x DAU growth without a single new download). Leading with the uncomfortable truth creates urgency while framing it as opportunity, not failure.`},
+        {text:`Present both numbers side by side and let the audience draw their own conclusions.`, score:2, feedback:`Presenting data without interpretation is an abdication of the PM's role. The audience will focus on whichever number confirms their existing beliefs. Your job is to curate the narrative and guide the audience to the right conclusion — the retention gap is the #1 priority.`},
+        {text:`Skip the all-hands presentation and instead send a detailed data report via email so people can digest it at their own pace.`, score:1, feedback:`Data reports without narrative get skimmed and filed. The whole point of a presentation is to create shared understanding and emotional commitment to action. An email report about a retention crisis will get buried under 50 other emails. This moment requires a presentation that moves people.`}
+      ],
+      competency:[0,4,6]
+    },
+    {
+      scenario:`2020 — Presenting the Streak Feature Impact to the Board\n\nDuolingo's streak feature (consecutive days of practice) has become the app's most powerful retention mechanic. Users with a 7-day streak are 3.5x more likely to become paying subscribers. Users with a 30-day streak have 90% D60 retention.\n\nThe board has asked for a presentation on "what's driving growth." You need to tell the story of streaks — but board members are investors and finance people, not product people. They think in terms of CAC, LTV, and revenue growth, not streaks and gamification mechanics.\n\nYou have 15 minutes and 10 slides.`,
+      question:`How do you structure the board presentation on streaks?`,
+      options:[
+        {text:`Start with the mechanics: explain what streaks are, show the gamification design, then connect to retention data, and finally show revenue impact.`, score:1, feedback:`This is bottom-up storytelling — building from mechanics to impact. Board members will lose interest during the gamification explanation. By slide 5, they're checking their phones. The Pyramid Principle says: lead with the answer, not the methodology.`},
+        {text:`Lead with LTV impact: "Users who streak 7+ days have 3.5x higher LTV. Streaks are now our #1 revenue driver. Here's how we're doubling down." Then show the supporting data.`, score:3, feedback:`Perfect Pyramid Principle execution. The board hears the financial impact in the first 30 seconds — in their language (LTV, revenue). The supporting slides explain how and why, but even if they only remember slide 1, the message lands. You've translated a product feature into a business narrative.`},
+        {text:`Create a detailed 30-slide deck covering streak mechanics, cohort analysis, statistical significance, and revenue projections to show rigour.`, score:1, feedback:`30 slides for a 15-minute slot means either you're racing through them (no absorption) or you're running over time (disrespectful). Rigour belongs in the appendix. The board wants clarity and conviction, not a statistics lecture.`},
+        {text:`Show a live demo of the streak feature on your phone, then walk through the data to show why it works.`, score:2, feedback:`A demo adds emotional resonance — the board can see what users experience. But leading with a demo before establishing the business impact means the board doesn't know why they should care about what they're seeing. A better approach: lead with LTV impact, then use a 30-second demo as supporting evidence.`}
+      ],
+      competency:[2,5,6]
+    },
+    {
+      scenario:`2021 — The Duolingo English Test vs. TOEFL Dashboard\n\nDuolingo's English Test (DET) is competing with TOEFL and IELTS for university acceptance. 3,000 universities now accept DET scores, but admissions officers are sceptical about the test's validity. Your team has strong psychometric data showing DET scores correlate at r=0.87 with TOEFL scores — statistically, it's a valid predictor of English proficiency.\n\nYou need to create a presentation for university admissions directors — people who are NOT statisticians. They care about fairness, reliability, and whether their incoming students will succeed academically.\n\nA correlation coefficient of 0.87 means nothing to them.`,
+      question:`How do you present the DET validity data to university admissions directors?`,
+      options:[
+        {text:`Lead with the r=0.87 correlation coefficient and explain what it means statistically, with confidence intervals and p-values.`, score:1, feedback:`Statistical jargon alienates non-technical audiences. Admissions directors don't think in correlation coefficients — they think in student outcomes. Leading with statistics signals that you're speaking your language, not theirs. Audience adaptation is the core skill here.`},
+        {text:`Show a scatter plot of DET scores vs. first-year GPA for students at partner universities, with a headline: "DET-admitted students perform identically to TOEFL-admitted students in their first year."`, score:3, feedback:`This translates complex psychometric data into the metric admissions directors actually care about: student success. The scatter plot makes the correlation visual and intuitive. The headline states the insight in plain language. You've adapted the same data to a completely different audience without dumbing it down — you've made it relevant.`},
+        {text:`Create a side-by-side comparison table of DET vs. TOEFL features (cost, accessibility, test time, scoring method) without emphasising the validity data.`, score:2, feedback:`Feature comparison is useful but avoids the core objection: "Is this test valid?" Admissions directors already know DET is cheaper and faster. What they need is confidence that DET-admitted students will succeed. Ducking the validity question makes it look like you don't have the data.`},
+        {text:`Have a university partner who uses DET deliver a testimonial about their experience, backed by their own internal data.`, score:2, feedback:`Peer testimonials are powerful for this audience — admissions directors trust other admissions directors. But without your own data presentation, you're delegating the story to someone else. The strongest approach combines your data (student outcomes) with peer validation (testimonial) in the same presentation.`}
+      ],
+      competency:[1,3,5]
+    },
+    {
+      scenario:`2022 — Presenting the Leaderboard A/B Test Results\n\nDuolingo ran a large-scale A/B test on leaderboards — a competitive feature that ranks users against each other weekly. The results are mixed:\n\n• DAU increased 17% for users with leaderboards (strong positive)\n• Time-in-app increased 12% (positive)\n• But lesson completion rate dropped 5% (users were gaming XP, not learning)\n• And 8% of users in the bottom quartile reported feeling "discouraged" in surveys\n\nThe VP of Product wants you to present the results at the product review. Different stakeholders will have different reactions: the growth team will love the DAU lift, the learning science team will hate the completion drop, and the user research team will flag the discouragement issue.`,
+      question:`How do you present these mixed A/B test results?`,
+      options:[
+        {text:`Present all four metrics equally and let the leadership team decide what matters most.`, score:1, feedback:`Presenting data without a recommendation is an abdication of the PM's role. When results are mixed, stakeholders will cherry-pick the metric that supports their existing position. The growth team will celebrate DAU, the learning team will mourn completion, and nothing gets decided. Your job is to synthesise and recommend.`},
+        {text:`Lead with the DAU lift (17%) since that's the North Star metric, mention the trade-offs, and recommend shipping with a plan to address the completion drop in v2.`, score:2, feedback:`This prioritises the North Star metric, which shows good metric hierarchy awareness. But downplaying the completion drop and discouragement data is risky — if the learning science team feels unheard, they'll escalate. A better approach acknowledges the tension explicitly and addresses all stakeholders.`},
+        {text:`Frame it as a tension: "Leaderboards drive engagement (+17% DAU) but create a learning quality trade-off (-5% completion, 8% discouragement). Here's a proposal that captures the upside while fixing the downside — redesigned XP that rewards completion, not gaming."`, score:3, feedback:`This is masterful data storytelling for a mixed-result scenario. You acknowledge the tension honestly (builds trust with all stakeholders), quantify both sides (shows rigour), and resolve it with a specific proposal (shows leadership). The learning team feels heard, the growth team sees the path forward, and leadership has a clear decision to make.`},
+        {text:`Delay the presentation until you can run a follow-up test that isolates the learning quality issue and gives you cleaner results.`, score:1, feedback:`Waiting for "perfect" data is a common trap. The business needs a decision now — the test has been running for weeks, consuming engineering resources. Presenting mixed results with a recommendation is better than no presentation. Perfect data is the enemy of timely decisions.`}
+      ],
+      competency:[0,7,8]
+    },
+    {
+      scenario:`2023 — Duolingo Max (GPT-4 Integration) Launch Metrics\n\nDuolingo just launched Duolingo Max, a premium tier powered by GPT-4 that offers AI-powered roleplay conversations and "Explain My Answer" features. The subscription costs $30/month (vs. $7/month for Super Duolingo).\n\nAfter 3 months, the data tells an interesting story:\n• Conversion rate: only 2% of Super users upgraded (below the 5% target)\n• But retention of Max users is 95% at D90 (vs. 80% for Super)\n• NPS for Max users: 72 (vs. 45 for Super)\n• Revenue per Max user: 4.3x higher than Super\n\nYou need to present these results to the CEO and CFO. The headline conversion number looks like a miss, but the deeper metrics tell a different story.`,
+      question:`How do you present the Duolingo Max launch metrics?`,
+      options:[
+        {text:`Lead with the 2% conversion miss, acknowledge the shortfall, and propose tactics to improve conversion (pricing changes, free trials, better marketing).`, score:2, feedback:`Leading with the miss is honest but sets a negative tone that colours how every subsequent metric is received. The conversion number is real, but it's not the most important story. When a launch metric misses the target but downstream metrics exceed expectations, the narrative should be "we found a smaller but more valuable audience than expected."`},
+        {text:`Lead with the headline: "Max users are 4.3x more valuable and 95% retained. We have a product-market fit problem, not a product problem. Here's how we expand the addressable audience." Then show the conversion data in context.`, score:3, feedback:`Brilliant reframing. You're not hiding the conversion miss — you're putting it in context. The story is: "We built something users love (NPS 72, 95% retention, 4.3x revenue). The challenge isn't product quality — it's finding more of the right users." This shifts the conversation from "did we fail?" to "how do we scale what's working?" That's the strategic question the CEO actually needs to answer.`},
+        {text:`Build a detailed financial model showing projected LTV for Max users and present it as a revenue forecast to the CFO.`, score:2, feedback:`CFOs do love financial models, and the LTV story is strong. But a financial model without the product narrative is just a spreadsheet. The CEO needs to understand WHY Max users are so valuable (the product creates a habit loop) before trusting the numbers. Pair the financial model with the product story for maximum impact.`},
+        {text:`Compare Duolingo Max metrics with competitor AI language tools to show relative performance and market position.`, score:1, feedback:`Competitive benchmarking is useful context but doesn't address the core question: "Is Duolingo Max working?" External comparisons can distract from internal performance. The board cares about Duolingo's trajectory, not how ChatGPT's language features are performing. Competitive data belongs in the appendix.`}
+      ],
+      competency:[0,4,5]
+    },
+    {
+      scenario:`2020 — COVID Impact: Presenting the Usage Surge to Investors\n\nCOVID-19 lockdowns caused Duolingo's DAU to spike 67% in March 2020. New user sign-ups tripled. It's the biggest growth event in company history.\n\nThe investor relations team wants you to help prepare the quarterly earnings narrative. The challenge: investors will ask whether this growth is sustainable or a one-time spike. If you oversell the growth, you'll face tough questions when usage normalises. If you undersell it, you miss the chance to show momentum.\n\nYou have strong cohort data showing that COVID-era users have slightly lower D30 retention (28%) than pre-COVID users (32%), but their absolute numbers are so large that even with lower retention, the DAU base will be permanently higher.`,
+      question:`How do you present the COVID growth story to investors?`,
+      options:[
+        {text:`Lead with the 67% DAU spike and triple sign-ups as proof that Duolingo is the go-to education platform during disruption.`, score:1, feedback:`This is overselling. Experienced investors will immediately ask "is this sustainable?" If you don't address it proactively, they'll assume you're either naïve or hiding something. COVID growth was a tailwind for all consumer apps — claiming it as unique to Duolingo undermines credibility.`},
+        {text:`Present a segmented view: "COVID brought 3x new users. Their D30 retention is 28% vs. 32% baseline — slightly lower, but the absolute DAU base is now permanently 40% higher than pre-COVID levels. Here's our plan to convert temporary users into habitual learners."`, score:3, feedback:`This is the gold standard for investor communication: honest about the nuance (lower retention for COVID cohort), optimistic about the outcome (permanently higher DAU base), and forward-looking (plan to improve retention). You've anticipated the "is it sustainable" question and answered it before it's asked. Investors trust PMs who show them the full picture.`},
+        {text:`Downplay the COVID spike entirely and focus on underlying organic growth trends to avoid setting unrealistic expectations.`, score:1, feedback:`Under-selling a 67% DAU spike destroys credibility in the other direction. Investors will see the numbers regardless — they're in the public filings. If you don't narrate the story, analysts will, and their narrative may be less favourable. The PM's job is to provide the authoritative interpretation of the data.`},
+        {text:`Create a detailed slide for each geographic market showing how COVID impacted usage differently across regions.`, score:2, feedback:`Geographic segmentation adds useful colour but risks drowning the main narrative in detail. Investors want the headline story first, then can ask for regional breakdowns. A geographic deep-dive belongs in the appendix or as a follow-up slide if asked. Lead with the synthesised narrative, not the granular cuts.`}
+      ],
+      competency:[0,3,5]
+    },
+    {
+      scenario:`2021 — The Push Notification Optimisation Report\n\nDuolingo sends over 1 billion push notifications per month. The data science team has completed a major analysis showing that ML-personalised send times increase lesson starts by 8.5% vs. fixed-schedule notifications.\n\nYou need to present this to three different audiences in one week:\n• Monday: Engineering team (they need to build the ML pipeline)\n• Wednesday: Marketing team (they manage notification content)\n• Friday: Executive team (they need to approve the infrastructure investment)\n\nSame data. Three audiences. Three different presentations needed.`,
+      question:`How do you adapt the notification optimisation presentation across three audiences?`,
+      options:[
+        {text:`Use the same deck for all three audiences to ensure message consistency.`, score:1, feedback:`Message consistency matters, but presentation consistency across radically different audiences means you're optimising for one and boring the other two. Engineers don't care about marketing ROI. Marketers don't care about ML architecture. Executives don't care about either — they care about impact and cost. Same data, different stories.`},
+        {text:`Create three different decks: Engineers get the ML architecture and data pipeline requirements. Marketing gets the content strategy implications and A/B test results. Executives get the ROI case — cost of infrastructure vs. projected revenue lift from 8.5% more lesson starts.`, score:3, feedback:`This is textbook audience adaptation. Same insight, three different framings. Engineers need to understand what they're building (technical depth). Marketers need to understand how their content strategy changes (operational implications). Executives need to understand why this is worth the investment (business impact). The data storytelling skill is knowing that one story doesn't fit all audiences.`},
+        {text:`Present to the executive team first to get approval, then tell engineering and marketing what to build.`, score:2, feedback:`Getting executive approval first is strategically smart, but skipping the engineering and marketing presentations means the people who'll actually implement don't have context or buy-in. They'll execute better if they understand the "why" behind the infrastructure investment and content strategy changes.`},
+        {text:`Write a detailed report and distribute it to all three teams, then hold office hours for questions.`, score:1, feedback:`Reports without presentations lack the narrative arc that drives action. Office hours assume people will read the report and show up with questions — most won't. For a project that requires cross-functional coordination, you need dedicated presentations that create shared understanding and commitment.`}
+      ],
+      competency:[3,5,8]
+    },
+    {
+      scenario:`2022 — Super Duolingo Conversion Funnel Dashboard\n\nDuolingo's subscription product (Super Duolingo, $7/month) has a conversion funnel:\n\nFree user → paywall impression → trial start → trial completion → paid subscription\n\nThe funnel data shows:\n• 100% free users (base)\n• 45% see paywall (after hitting the "hearts" limit)\n• 12% start a free trial\n• 68% complete the trial\n• 52% convert to paid after trial\n\nThe VP of Growth asks you to build a self-serve dashboard that tells this story to PMs, analysts, and executives — without requiring a presenter to explain it.`,
+      question:`How do you design the subscription conversion dashboard?`,
+      options:[
+        {text:`Show all five funnel stages in a single funnel chart with conversion rates between each step, updated daily.`, score:2, feedback:`A funnel chart is the right starting point but insufficient alone. It shows what's happening but not why. PMs need to understand which levers to pull, and executives need to see trends over time. A static funnel is a snapshot — dashboards need to tell a story that evolves.`},
+        {text:`Build a dashboard with three layers: (1) The headline funnel with week-over-week trends, (2) Segment breakdowns by country, platform, and user tenure, (3) A "levers" section showing which actions correlate with higher conversion at each step.`, score:3, feedback:`This is dashboard storytelling at its best. Layer 1 answers "what's happening?" Layer 2 answers "where is it happening?" Layer 3 answers "what can we do about it?" A self-serve dashboard must anticipate the questions users will ask and answer them without a presenter. The layered approach lets executives stay at the top level while PMs drill into segments and levers.`},
+        {text:`Create separate dashboards for each team — one for growth PMs, one for the finance team, and one for executives — each showing only the metrics relevant to them.`, score:2, feedback:`Audience-specific views are valuable, but separate dashboards risk creating a "different versions of the truth" problem. If the growth team's dashboard shows different numbers than the finance team's (due to different definitions or time windows), trust erodes. Start with one source of truth, then create filtered views for different audiences.`},
+        {text:`Display every available metric on a single comprehensive dashboard so users can self-select what matters to them.`, score:1, feedback:`The "everything" dashboard is the most common dashboard anti-pattern. When everything is highlighted, nothing is. Users face decision paralysis, can't find the signal in the noise, and end up building their own spreadsheets anyway. Curation is the core skill — showing less, not more, is harder and more valuable.`}
+      ],
+      competency:[1,2,6]
+    },
+    {
+      scenario:`2023 — Duolingo Math & Music Launch: Telling the Expansion Story\n\nDuolingo is expanding beyond languages into Math and Music. After 6 months, early data shows:\n\n• Duolingo Math: 5M downloads, D7 retention 38% (vs. 45% for language courses at the same stage)\n• Duolingo Music: 3M downloads, D7 retention 52% (exceeding language benchmarks)\n• 30% of Math/Music users are NEW to Duolingo (not existing language learners)\n• Cross-pollination: 15% of Math/Music users started a language course\n\nYou're presenting the expansion strategy results at the annual planning meeting. The audience includes the CEO, CFO, and all VPs. The CEO is bullish on expansion. The CFO is worried about spreading resources too thin. You need to tell a story that's honest about both Math and Music.`,
+      question:`How do you present the Math vs. Music performance to the leadership team?`,
+      options:[
+        {text:`Combine Math and Music into a single "expansion" metric (8M total downloads, blended D7 retention of 43%) to show overall momentum.`, score:1, feedback:`Blending two products with very different performance profiles is misleading. Music is outperforming; Math is underperforming. A blended average hides both stories. When leadership eventually looks at the breakdown, they'll question why you averaged away the signal. Transparency builds trust — especially when telling a nuanced story.`},
+        {text:`Present Math and Music separately with honest comparisons to language benchmarks. Frame Music as "exceeding expectations — ready to scale" and Math as "promising early traction with a clear retention gap to close." Show the 30% new-user acquisition and 15% cross-pollination as strategic wins for both.`, score:3, feedback:`This is how you tell a differentiated story honestly. Music gets the "scale" narrative (retention exceeds benchmarks). Math gets the "iterate" narrative (promising but needs work). The cross-pollination and new-user data support the strategic thesis for both. The CFO gets honesty about Math's challenges; the CEO gets validation that expansion is working. Everyone hears the truth.`},
+        {text:`Focus primarily on Music since it's outperforming, and position Math as a "long-term bet" that needs more time to evaluate.`, score:2, feedback:`Emphasising the winner is tempting but risks under-investing in Math's retention problem. "Long-term bet" language is often code for "we don't have a plan." The CFO will hear evasion. Better to be specific: "Math D7 retention is 38% vs. 45% benchmark. We've identified onboarding and difficulty curve as the primary gaps. Here's the 90-day plan to close them."`},
+        {text:`Build a detailed cohort analysis for both products with weekly retention curves, segment breakdowns, and statistical confidence intervals.`, score:1, feedback:`At an annual planning meeting with the CEO and CFO, a detailed cohort analysis is the wrong altitude. This audience needs the strategic narrative: is expansion working? Where do we invest? What do we cut? Save the cohort analysis for the product review with your direct team. Altitude mismatch is one of the most common data presentation mistakes.`}
+      ],
+      competency:[0,3,4]
+    },
+    {
+      scenario:`2019 — The "Hearts" Monetisation Controversy\n\nDuolingo's "hearts" system limits free users to 5 mistakes per session. When hearts run out, users must wait for them to regenerate — or pay for Super Duolingo to get unlimited hearts. The system drives subscription revenue, but user sentiment data tells a troubling story:\n\n• App Store rating dropped from 4.7 to 4.3 after hearts were introduced\n• 1-star reviews mentioning "hearts" increased 340%\n• But Super Duolingo conversion increased 28%\n• And total company revenue grew 42% YoY\n\nThe CEO has asked you to prepare a board-ready analysis of whether hearts are helping or hurting Duolingo.`,
+      question:`How do you present the hearts system analysis to the board?`,
+      options:[
+        {text:`Lead with the 42% revenue growth and 28% conversion lift, positioning hearts as a successful monetisation mechanic, and mention the rating drop as manageable noise.`, score:1, feedback:`Dismissing a 0.4-point App Store rating drop and 340% increase in negative reviews as "noise" is dangerous. App Store ratings affect discoverability and new user acquisition. If the board later learns the full picture, your credibility is damaged. The PM's job is to present the complete picture, not just the numbers that look good.`},
+        {text:`Present the full tension: "Hearts drive 28% more conversions and 42% revenue growth, but at a cost — 0.4-point rating drop and 340% more negative reviews. Here's the LTV math that shows whether the revenue gain outweighs the acquisition cost increase from lower ratings, and here are three design modifications to reduce the negative sentiment."`, score:3, feedback:`This is a masterclass in honest data storytelling. You're not hiding the controversy — you're quantifying both sides and presenting the trade-off in a framework the board can evaluate (LTV math). The three modifications show you've thought beyond the analysis to the solution. Boards trust PMs who bring problems with solutions, not just problems or just solutions.`},
+        {text:`Recommend removing hearts entirely based on the negative user sentiment, arguing that long-term brand damage outweighs short-term revenue gains.`, score:1, feedback:`This ignores the quantitative evidence. A 42% revenue increase isn't "short-term" — it's the foundation of Duolingo's business model. Recommending removal without modelling the revenue impact is presenting ideology as analysis. The board needs data-driven trade-offs, not opinions about what "feels" right.`},
+        {text:`Present a detailed sentiment analysis with NLP-categorised reviews, word clouds, and trend charts showing the rating decline over time.`, score:2, feedback:`Sentiment analysis adds valuable colour, but leading with it positions the narrative as "hearts are bad." The board also needs to see the business upside. A balanced presentation pairs the sentiment data with the revenue data and synthesises them into a recommendation. NLP analysis belongs in the supporting slides, not the lead.`}
+      ],
+      competency:[0,4,8]
+    }
+  ],
+  2: [
+    {
+      scenario:`2021 — Pre-IPO Investor Roadshow\n\nDuolingo is preparing for its IPO. You're helping the product team contribute to the S-1 filing narrative and investor roadshow deck. The challenge: Duolingo needs to tell a growth story that justifies a $3B+ valuation, but the company isn't yet profitable.\n\nKey metrics:\n• 40M MAU, growing 30% YoY\n• Revenue: $250M, growing 55% YoY\n• Net loss: -$60M (narrowing from -$80M previous year)\n• DAU/MAU ratio: 25% (improving from 18% two years ago)\n• Super Duolingo subscribers: 2M, growing 70% YoY\n\nInvestors will compare Duolingo to other consumer subscription businesses (Spotify, Netflix, Peloton).`,
+      question:`What's the lead narrative for the investor roadshow?`,
+      options:[
+        {text:`Lead with the 55% revenue growth and 70% subscriber growth, positioning Duolingo as a high-growth SaaS company.`, score:2, feedback:`Revenue and subscriber growth are strong, but calling Duolingo a "SaaS company" invites comparison to B2B SaaS multiples and metrics (ARR, NRR, churn) where Duolingo may not compare favourably. The narrative should emphasise what makes Duolingo unique — its engagement model — not force it into a category that doesn't fit.`},
+        {text:`Build the narrative around the DAU/MAU improvement (18% → 25%), frame Duolingo as a "habit platform" not a "language app," show how engagement drives monetisation, and use the subscriber growth as proof that habitual users convert.`, score:3, feedback:`This is the highest-leverage narrative for an IPO. You're not competing on revenue (Netflix is bigger) or growth rate (many startups grow faster). You're creating a new category: "habit platform." The DAU/MAU improvement is the proof point — users are becoming more habitual, and habitual users monetise. This narrative supports a premium valuation because it shows a compounding flywheel, not just linear growth.`},
+        {text:`Focus on the education market size ($5T globally) and Duolingo's tiny market share, making the case that there's enormous room to grow.`, score:2, feedback:`TAM slides are necessary but not differentiating — every company claims a huge addressable market. Leading with TAM without explaining your specific competitive advantage makes you sound like every other pitch. The market size belongs on slide 3, after you've established what makes Duolingo's model uniquely positioned to capture it.`},
+        {text:`Lead with the path to profitability: losses narrowing from -$80M to -$60M, with clear unit economics showing per-user profitability.`, score:1, feedback:`Focusing on loss reduction positions Duolingo as a company managing its problems rather than one building its future. At IPO, investors buy growth stories, not cost-cutting stories. The loss narrowing should be mentioned (slide 8-9) to address concerns, but it shouldn't be the headline. You're selling potential, not prudence.`}
+      ],
+      competency:[0,4,5]
+    },
+    {
+      scenario:`2022 — Gamification Metrics: XP Inflation Report\n\nDuolingo's gamification economy (XP points, gems, streaks) is showing signs of inflation. Power users have found ways to earn massive XP through practices and challenges without proportional learning gains. The data:\n\n• Average XP earned per user increased 45% YoY\n• But average lesson completion only increased 8% YoY\n• Top 10% of users earn 60% of all XP\n• XP-per-lesson-completed has diverged from the intended 1:1 ratio to 2.3:1\n\nThe gamification team needs to present this to the product leadership council and recommend changes. The complication: any changes to XP will anger the most engaged (and vocal) user segment.`,
+      question:`How do you present the XP inflation problem and proposed solution?`,
+      options:[
+        {text:`Present the inflation data and recommend a hard XP reset — reduce all XP values by 50% to restore the intended ratio.`, score:1, feedback:`A hard reset is the nuclear option. Without presenting the user impact data (how many users affected, churn risk, community backlash) alongside the recommendation, you're proposing a drastic action without a risk analysis. Data storytelling means showing both the problem AND the consequences of each solution path.`},
+        {text:`Frame it as an ecosystem health story: "Our gamification economy is inflating. Here's what that looks like [data], here's what it means for learning outcomes [connection to mission], and here are three graduated solutions from least to most disruptive, with projected user impact for each."`, score:3, feedback:`This is excellent analytical storytelling. You've framed the technical problem ("XP inflation") in mission-relevant terms ("learning outcomes"), given leadership a menu of options with trade-offs, and shown the projected impact of each. The graduated approach lets leadership choose their risk appetite rather than forcing a binary yes/no decision.`},
+        {text:`Downplay the inflation and argue that high XP engagement is a positive signal — users are more motivated than ever.`, score:1, feedback:`This is the "hide the problem" approach. When XP disconnects from learning, the gamification system loses meaning, and eventually users notice. Worse, if the leadership team discovers the inflation independently, your credibility is permanently damaged. A PM's job is to surface uncomfortable truths, not bury them.`},
+        {text:`Present the data to the gamification team privately and fix it without involving the product leadership council.`, score:1, feedback:`Gamification changes affect every user and every metric. Making changes without leadership alignment means no one has your back when the top 10% of users complain loudly on social media. Major economy changes need executive sponsorship and a communications plan. This is exactly the kind of decision that needs a formal presentation.`}
+      ],
+      competency:[0,1,7]
+    },
+    {
+      scenario:`2023 — Accessibility Metrics: Telling the Inclusion Story\n\nDuolingo's accessibility team has been working on screen reader support, dyslexia-friendly fonts, and cognitive load reduction. After 6 months, they have data:\n\n• Screen reader users increased from 12K to 89K DAU (7.4x growth)\n• Dyslexia font users: 340K enabled the option\n• Lesson completion rate for accessibility users: 67% (vs. 72% for all users — gap is closing)\n• Accessibility users have 2.1x higher D30 retention than average\n\nThe team needs to present this at the quarterly business review. Historically, accessibility has been positioned as a "nice to have" that competes with growth features for engineering resources. The team wants to change this narrative.`,
+      question:`How do you reframe the accessibility narrative from "nice to have" to strategic investment?`,
+      options:[
+        {text:`Present the moral argument: accessibility is the right thing to do, and Duolingo's mission is to make education accessible to everyone.`, score:1, feedback:`The moral argument is true but insufficient at a business review. It positions accessibility as a cost centre that exists because it's "right" — which means it will always lose the prioritisation battle against revenue-driving features. To change the narrative, you need to change the framing from moral obligation to strategic advantage.`},
+        {text:`Lead with the retention data: "Accessibility users retain at 2.1x the average rate. This isn't charity — it's an underserved segment with superior engagement. Here's the business case for doubling our accessibility investment." Then show the DAU growth and completion data as supporting evidence.`, score:3, feedback:`This completely reframes the narrative. Accessibility is no longer a cost centre — it's a growth lever with superior retention. The 2.1x retention figure leads because it speaks the language of the quarterly business review. The DAU growth (12K → 89K) shows the addressable audience is expanding. You've turned "should we invest in accessibility?" from a moral question into a business question — and the data says yes.`},
+        {text:`Focus on the 7.4x DAU growth (12K → 89K) as the headline, showing that accessibility features are attracting new users.`, score:2, feedback:`The 7.4x growth is impressive in percentage terms, but 89K DAU is tiny relative to Duolingo's 40M+ MAU. Executives will do the math: that's 0.2% of users. The retention metric (2.1x) is more compelling because it applies to a potentially much larger segment and connects to the metrics the business review audience cares about.`},
+        {text:`Create a comprehensive accessibility scorecard comparing Duolingo to competitors (Babbel, Rosetta Stone, Busuu) on accessibility features.`, score:1, feedback:`Competitive comparison is useful context but doesn't change the internal resource allocation narrative. The problem isn't "are we better than competitors at accessibility?" — it's "should we invest more engineering resources in accessibility vs. other features?" Competitive data answers the wrong question here.`}
+      ],
+      competency:[0,3,8]
+    },
+    {
+      scenario:`2020 — Family Plan Launch Metrics\n\nDuolingo launched a Family Plan ($10/month for up to 6 users, vs. $7/month for individual Super Duolingo). After the first quarter:\n\n• 180K families subscribed\n• Average family size: 3.2 members\n• Revenue per user in Family Plan: $3.12/month (vs. $7 individual)\n• BUT household-level churn: 4% monthly (vs. 8% for individual Super)\n• 23% of Family Plan members were previously free users\n• Children (under 13) in Family Plans have 2x the lesson frequency of adult-only accounts\n\nThe CFO is concerned that the Family Plan is cannibalising individual subscriptions (lower revenue per user). You need to present the data in a way that accurately reflects both the risk and the opportunity.`,
+      question:`How do you address the CFO's cannibalisation concern with data?`,
+      options:[
+        {text:`Show the revenue-per-user decline ($7 → $3.12) is offset by the churn improvement (8% → 4%), then calculate that Family Plan LTV per household actually exceeds individual LTV.`, score:3, feedback:`This is the exact analysis the CFO needs. You've taken the concern seriously (revenue per user IS lower), but reframed it with the complete picture: lower revenue per user × longer retention × more users per household = higher household LTV. The churn data is the killer insight — halving churn dramatically increases lifetime value. You've answered the question the CFO actually asked, with the math that resolves it.`},
+        {text:`Dismiss the cannibalisation concern by focusing on the 23% of Family Plan members who were previously free users — "We're converting free users, not cannibalising paid ones."`, score:2, feedback:`The 23% new-conversion data is a strong counter-argument, but dismissing the CFO's concern feels defensive. 77% of Family Plan members WERE potential individual subscribers. Acknowledge the cannibalisation is real, then show why the trade-off is net positive. CFOs respect PMs who engage with their concerns, not ones who deflect them.`},
+        {text:`Recommend pausing the Family Plan until you can gather more data on long-term cannibalisation effects.`, score:1, feedback:`Pausing a product with 180K subscribers and half the churn rate of individual plans is a drastic recommendation based on one quarter of data. The early metrics are overwhelmingly positive on retention. The cannibalisation concern is valid but can be managed with pricing adjustments, not a full pause. Data should inform action, not paralysis.`},
+        {text:`Present a detailed cohort analysis showing month-by-month revenue trajectories for Family vs. individual subscribers over the 3-month period.`, score:2, feedback:`Cohort analysis is the right methodology, but 3 months is too short for reliable LTV projections. The CFO will (rightly) question whether early retention trends hold. Better to lead with the household LTV framework, acknowledge the 3-month limitation, and propose a 6-month review checkpoint. Show the analysis and be honest about its confidence level.`}
+      ],
+      competency:[1,4,5]
+    },
+    {
+      scenario:`2021 — Learning Effectiveness: Presenting to Sceptical Academics\n\nDuolingo has published a study claiming that 34 hours of Duolingo is equivalent to one university semester of language study. The study is rigorous — peer-reviewed and published in a respected journal. But academic critics argue the comparison is flawed: university courses teach reading, writing, speaking, and cultural competence, while Duolingo primarily teaches vocabulary and grammar.\n\nYou're presenting at an education conference to an audience of language professors, many of whom view Duolingo as a "toy" that cheapens language education. You have 20 minutes to change their minds — or at least open them.`,
+      question:`How do you present the learning effectiveness data to sceptical academics?`,
+      options:[
+        {text:`Lead with the headline: "34 hours of Duolingo = 1 university semester." It's your strongest data point and will grab attention.`, score:1, feedback:`This headline, while attention-grabbing, will immediately trigger the audience's defences. Academics will spend the rest of your talk mentally picking apart the comparison methodology instead of listening to your evidence. When presenting to a hostile audience, leading with your most provocative claim is the worst possible strategy — it closes minds rather than opening them.`},
+        {text:`Acknowledge the limitations upfront: "We know Duolingo doesn't replace a full language education. Here's what it does well [vocabulary, grammar, reading comprehension], here's what it doesn't [speaking fluency, cultural competence], and here's where we see Duolingo as complementary to classroom instruction, not a replacement."`, score:3, feedback:`This is how you win a hostile audience: disarm them by conceding their strongest point first. When you acknowledge Duolingo's limitations before the audience brings them up, you signal intellectual honesty and remove their primary objection. Now they can actually listen to the data. Positioning as "complementary" rather than "replacement" turns potential enemies into potential allies. This is audience adaptation at its finest.`},
+        {text:`Focus on the peer-reviewed methodology and statistical rigour of the study to establish credibility with the academic audience.`, score:2, feedback:`Academics do value methodological rigour, but leading with methodology before establishing relevance means you're defending your research rather than telling a story. Methodology is the "how" — academics need to first understand the "why should I care?" and "what does this mean for my students?" Methodology builds trust but doesn't change minds by itself.`},
+        {text:`Share testimonials from learners whose lives were changed by Duolingo — immigrants who learned English, travellers who connected with locals.`, score:1, feedback:`Anecdotes are powerful for general audiences but can backfire with academics who view them as cherry-picked emotional manipulation. Academics want data, not stories. Individual testimonials don't prove systemic learning effectiveness. These stories work better in a marketing context than an academic conference.`}
+      ],
+      competency:[3,5,8]
+    },
+    {
+      scenario:`2022 — TikTok Strategy ROI: Making the Case for Unbranded Content\n\nDuolingo's TikTok account has gone viral with comedic, unbranded content featuring Duo the owl. The social media team has data:\n\n• 8M TikTok followers (grew from 100K in 18 months)\n• Average video: 2M views, 200K likes\n• Brand awareness among Gen Z: increased from 72% to 91%\n• BUT: direct attribution to app downloads is murky — only 3% of TikTok followers can be matched to Duolingo accounts\n• Organic search for "Duolingo" increased 40% during peak TikTok activity periods\n\nMarketing leadership is questioning the ROI of the TikTok investment because they can't draw a straight line from TikTok views to app downloads. You need to make the case for continued (and increased) investment.`,
+      question:`How do you present the TikTok ROI when direct attribution is weak?`,
+      options:[
+        {text:`Acknowledge the attribution gap is real and recommend reducing TikTok investment until you can build better tracking.`, score:1, feedback:`Cutting investment in a channel that drove brand awareness from 72% to 91% among Gen Z because you can't perfectly track it is letting measurement limitations drive strategy. Not everything that matters can be measured, and not everything that can be measured matters. The 40% organic search lift is a strong signal, even if it's not a pixel-perfect attribution.`},
+        {text:`Build a "halo effect" framework: show the temporal correlation between TikTok viral periods and organic search spikes, brand awareness lift, and app store ranking improvements. Frame TikTok as a brand investment with measurable but indirect impact, not a direct-response channel.`, score:3, feedback:`This reframes the entire conversation. Instead of defending weak direct attribution, you're presenting TikTok correctly: it's a brand channel, not a performance channel. The "halo effect" framework — showing temporal correlations between viral moments and downstream metrics — provides the evidence without overpromising on attribution. This is how you tell a data story when the data is indirect.`},
+        {text:`Focus on the vanity metrics: 8M followers, 2M average views, 200K average likes. The scale speaks for itself.`, score:1, feedback:`These are textbook vanity metrics. 8M TikTok followers who don't convert to Duolingo users are just an audience for comedic owl content. Marketing leadership is right to ask "so what?" You need to connect these numbers to business outcomes — even indirectly — to justify continued investment.`},
+        {text:`Commission a formal marketing mix model (MMM) study to isolate TikTok's contribution to overall growth before making any investment recommendations.`, score:2, feedback:`MMM is the right long-term analytical approach, but it takes 6-12 months and significant investment. Meanwhile, the marketing team needs a decision now about next quarter's budget. The halo-effect analysis with temporal correlations can be built in days and provides directional evidence. Perfect attribution is the enemy of good decision-making.`}
+      ],
+      competency:[1,2,8]
+    },
+    {
+      scenario:`2023 — Quarterly Business Review: The Dashboard Disaster\n\nYou arrive at the quarterly business review (QBR) and discover that different teams have been reporting different numbers:\n\n• Product team reports DAU as 24.2M (based on any app open)\n• Growth team reports DAU as 18.7M (based on lesson completion)\n• Finance team reports MAU as 72M (based on unique logins across all platforms)\n\nNone of these numbers are wrong — they use different definitions. But when the CEO sees three different user numbers in the same meeting, trust in the data team collapses. She asks you to fix this before the next QBR.`,
+      question:`How do you resolve the conflicting metrics across teams?`,
+      options:[
+        {text:`Pick one definition (e.g., the product team's "any app open") and mandate it across all teams for consistency.`, score:2, feedback:`Consistency is necessary but insufficient. "Any app open" is the most generous definition, which means it's also the least meaningful. If a user opens the app and immediately closes it, counting them as "active" inflates the metric. The right approach is to choose the definition that best represents genuine user value, not the one that produces the biggest number.`},
+        {text:`Create a company-wide metrics taxonomy: define "Active User" at three levels (L1: app open, L2: lesson started, L3: lesson completed), document each level's definition and appropriate use cases, and require every team to specify which level they're reporting.`, score:3, feedback:`This is the structural solution. Rather than forcing one definition, you create a shared vocabulary that accommodates different analytical needs. The growth team legitimately needs L3 for engagement analysis. Finance legitimately needs L1 for MAU reporting. The problem wasn't the definitions — it was the lack of a shared taxonomy. Now when someone says "24.2M L1 users" and "18.7M L3 users," both are correct and everyone knows what they mean.`},
+        {text:`Build a single "source of truth" dashboard and deprecate all team-specific dashboards to prevent confusion.`, score:1, feedback:`Centralising dashboards sounds clean but kills analytical agility. Teams need their own views to do their specific work. The growth team needs to see L3 users by cohort; finance needs L1 across platforms; product needs L2 with session depth. The problem isn't too many dashboards — it's too many undefined terms.`},
+        {text:`Add footnotes to all reports explaining the metric definitions, so each team can continue using their preferred definition.`, score:1, feedback:`Footnotes are where data goes to die. No one reads footnotes in a QBR presentation. The CEO shouldn't have to scan footnotes to understand whether 24.2M and 18.7M are measuring the same thing. The fix needs to be structural (shared taxonomy), not cosmetic (footnotes).`}
+      ],
+      competency:[1,6,9]
+    },
+    {
+      scenario:`2020 — Presenting Retention Curves to Non-Technical Stakeholders\n\nYou've just completed a cohort analysis of Duolingo's retention. The data shows the classic retention curve:\n\n• D1 retention: 52%\n• D7 retention: 28%\n• D14 retention: 22%\n• D30 retention: 18%\n• D90 retention: 12%\n\nThe curve flattens after D30, suggesting users who survive the first month become habitual. You need to present this to Duolingo's content partnerships team — people who create courses and educational content. They understand languages, not cohort analysis. They need to know: where are we losing users, and how can course design help?`,
+      question:`How do you make the retention curve meaningful to the content team?`,
+      options:[
+        {text:`Show the standard retention curve chart (y-axis: retention %, x-axis: days) and explain what each data point means.`, score:1, feedback:`A retention curve chart is second nature to a data scientist but meaningless to a content team. They'll see a line going down and think "this is bad" without understanding the nuance — that all consumer apps have declining retention curves, and the key insight is where the curve flattens. You're showing a chart without translating it into their world.`},
+        {text:`Translate the retention curve into a user journey narrative: "Out of every 100 new users, 52 return on Day 1. By Day 7, we've lost 72 — most of them during the first 3 lessons. The users who survive to Day 30 almost never leave. Your mission: make lessons 1-10 so compelling that we keep 5 more users out of every 100 past Day 7."`, score:3, feedback:`This is brilliant translation. You've taken an abstract statistical concept and turned it into a concrete human story the content team can act on. "5 more users out of every 100 past Day 7" gives them a tangible goal. Framing the first 3 lessons as the critical window tells them exactly where to focus. You've made the data actionable for their specific domain — this is what data storytelling is.`},
+        {text:`Compare Duolingo's retention curve to industry benchmarks (Headspace, Calm, other education apps) to show where Duolingo stands.`, score:2, feedback:`Benchmarks provide useful context, but the content team doesn't need to know how Duolingo compares to Headspace. They need to know what they can do to improve retention. Competitive benchmarks are more relevant for product leadership or investor presentations. For the content team, the story needs to be about their specific lever: course design and lesson quality.`},
+        {text:`Create a detailed heatmap showing retention by course, lesson number, and language to help the content team identify specific problem areas.`, score:2, feedback:`A course-by-course heatmap is analytically useful but risks overwhelming the content team with data. Better to start with the synthesised narrative (where users drop off), then offer the heatmap as a drill-down resource they can explore. Lead with the story, make the data available for follow-up. The content team needs inspiration before they need a spreadsheet.`}
+      ],
+      competency:[2,3,6]
+    },
+    {
+      scenario:`2023 — The Birdbrain AI Model: Internal vs. External Communication\n\nDuolingo developed "Birdbrain," an internal AI model that personalises lesson difficulty, content selection, and review spacing for each learner. The data science team has impressive internal results:\n\n• Birdbrain-personalised lessons: +15% learning efficiency (users reach proficiency 15% faster)\n• Engagement: +9% session length\n• But the model occasionally produces awkward translations or culturally inappropriate sentences (2% error rate)\n\nYou need to communicate about Birdbrain for two audiences:\n1. Internal engineering blog post (for recruiting and technical credibility)\n2. External press release (for users and media)\n\nThe 2% error rate is low but could become a headline if not handled carefully.`,
+      question:`How do you handle the internal vs. external communication about Birdbrain's performance?`,
+      options:[
+        {text:`Use the same messaging for both audiences — transparency means the same story for everyone.`, score:1, feedback:`Transparency doesn't mean identical messaging for all audiences. An engineering blog can discuss error rates in technical context (2% error rate, here's our plan to reduce it). A press release targeting general users should focus on the benefit (15% faster learning) and frame the error rate as part of continuous improvement. Same facts, different emphasis, different context.`},
+        {text:`Internal blog: full technical deep-dive including the 2% error rate, model architecture, and improvement roadmap. External press: lead with "15% faster learning" benefit, mention AI personalisation in accessible terms, and include a note that the team continuously monitors quality.`, score:3, feedback:`This is textbook audience adaptation for dual-audience communication. Engineers reading the blog want technical depth and intellectual honesty (including the 2% error rate). Users reading the press release want to know "what does this mean for me?" (faster learning). Both communications are truthful — they just emphasise different aspects of the same data. The internal blog builds recruiting credibility; the external release builds user trust.`},
+        {text:`Only publish the internal blog — avoid external communication until the error rate is below 1%.`, score:1, feedback:`Waiting for perfect performance before communicating means your competitors set the narrative. Users are already experiencing Birdbrain's personalisation — they just don't know what it's called. A well-crafted external announcement positions Duolingo as an AI-first education company while the market is paying attention to AI. The 2% error rate doesn't need to be zero to communicate the benefit.`},
+        {text:`Let the PR team handle the external messaging and the engineering team handle the blog independently, without coordinating the narratives.`, score:1, feedback:`Uncoordinated messaging is how companies end up with contradictory stories. If the engineering blog highlights the 2% error rate (being transparent) and the press release claims "flawless AI personalisation" (being promotional), journalists will notice the contradiction. Cross-functional narrative alignment is a core data storytelling skill.`}
+      ],
+      competency:[3,5,9]
+    },
+    {
+      scenario:`2024 — Annual Report to the Board: The Full Year Story\n\nIt's January 2024, and you're preparing Duolingo's annual product performance presentation to the board. The year had a complex story:\n\n• DAU grew from 24M to 27M (+12.5%)\n• Revenue grew from $420M to $531M (+26%)\n• Super Duolingo subscribers grew from 5.2M to 6.8M (+31%)\n• Duolingo Max (AI tier) reached 200K subscribers but missed the 500K target\n• Duolingo Math D30 retention improved from 28% to 36% but is still below language benchmarks (42%)\n• Two major incidents: a 6-hour outage in September and a data privacy concern flagged by a European regulator (resolved)\n\nThe board has 12 slides worth of attention. You need to tell the full year's story — wins, misses, and incidents.`,
+      question:`How do you structure the 12-slide annual board presentation?`,
+      options:[
+        {text:`Slide 1: Revenue growth. Slides 2-6: Wins in detail. Slides 7-9: Misses and incidents. Slides 10-12: Next year plan. Front-load the positive news.`, score:2, feedback:`Front-loading wins and burying problems on slide 7+ is a classic pattern boards see through. By the time you reach the misses, board members are either tuned out or suspicious about what else is hiding in the back of the deck. A more sophisticated structure integrates wins and challenges thematically rather than segregating them.`},
+        {text:`Slide 1: "2023 in one sentence — DAU +12.5%, Revenue +26%, with strategic bets that need more time." Slides 2-4: Core business strength (DAU, revenue, subscribers — with context). Slides 5-7: Strategic bets with honest scorecards (Max missed target, Math improving but below benchmark). Slides 8-9: Operational resilience (incidents, what we learned, what changed). Slides 10-12: 2024 priorities tied to the gaps identified.`, score:3, feedback:`This structure tells a complete, honest story with a clear throughline. The opening sentence sets expectations: "strong core, early bets." The middle sections give each theme its due — neither hiding misses nor dwelling on them. The incidents section shows maturity (we learned from failure). And the 2024 priorities flow naturally from the gaps identified. Board members leave with a clear mental model of where Duolingo stands and where it's going.`},
+        {text:`Focus the entire 12 slides on the three metrics the board cares most about (DAU, revenue, subscribers) and handle everything else in Q&A.`, score:1, feedback:`Leaving incidents and misses for Q&A is a high-risk strategy. If a board member asks about the Max miss or the outage and you haven't prepared slides, it looks like you were trying to avoid the topic. Board presentations should anticipate questions, not rely on them. The PM controls the narrative when they proactively address difficult topics.`},
+        {text:`Create a 30-slide comprehensive deck covering every product initiative, and plan to skip slides based on board interest.`, score:1, feedback:`"I have 30 slides but I'll skip some" is presentation malpractice. It signals you couldn't prioritise — the exact skill you need to demonstrate as a product leader. Twelve slides for an annual review is generous. The discipline of fitting a year's story into 12 slides IS the skill being tested.`}
+      ],
+      competency:[0,2,5]
+    }
+  ]
+};
+// ─── PHASE MANAGEMENT ─────────────────────────────────────
+function showPhase(id){
+  document.querySelectorAll('.phase').forEach(p=>p.classList.remove('active'));
+  document.getElementById('phase-'+id).classList.add('active');
+  window.scrollTo(0,0);
+}
+
+// ─── ON LOAD ──────────────────────────────────────────────
+window.addEventListener('DOMContentLoaded',()=>{
+  const params = new URLSearchParams(location.search);
+
+  // ?reset=true — clears attempt count
+  if(params.get('reset')==='true'){
+    Object.values(LS).forEach(k=>localStorage.removeItem(k));
+    location.href=location.pathname;
+    return;
+  }
+
+  // ?preview=true — founder mode: no email gate, no attempt limit
+  if(params.get('preview')==='true'){
+    state.name  = 'Preview Mode';
+    state.email = 'preview@cxosimulabs.com';
+    state.currentAttempt = 1;
+    // Show a small founder banner
+    const banner = document.createElement('div');
+    banner.style.cssText='position:fixed;bottom:16px;right:16px;background:#1a1a2e;color:#fff;padding:8px 16px;border-radius:8px;font-size:.78em;font-weight:600;z-index:9999;border:1px solid rgba(226,55,68,.4);';
+    banner.innerHTML='🔧 Founder Preview — <a href="?" style="color:#e23744;text-decoration:none;">Exit</a>';
+    document.body.appendChild(banner);
+    document.getElementById('attempt-badge-display').textContent = '🔧 Preview Mode';
+    showPhase('intro');
+    return;
+  }
+
+  const attempts = parseInt(localStorage.getItem(LS.attempts)||'0');
+  if(attempts>=2){
+    showPhase('blocked');
+  } else {
+    state.currentAttempt = attempts+1;
+    state.name = localStorage.getItem(LS.name)||'';
+    state.email = localStorage.getItem(LS.email)||'';
+    if(state.name && state.email){
+      document.getElementById('attempt-badge-display').textContent = `🎯 Attempt ${state.currentAttempt} of 2`;
+      showPhase('intro');
+    } else {
+      showPhase('email');
+    }
+  }
+});
+
+// ─── LEARN CARDS ──────────────────────────────────────────
+let currentLearnCard = 0;
+function nextLearnCard(){
+  const cards = document.querySelectorAll('.learn-card');
+  if(currentLearnCard < cards.length - 1){
+    cards[currentLearnCard].classList.remove('active');
+    currentLearnCard++;
+    cards[currentLearnCard].classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+}
+
+// ─── EMAIL / OTP ──────────────────────────────────────────
+function sendOTP(){
+  const name  = document.getElementById('input-name').value.trim();
+  const email = document.getElementById('input-email').value.trim();
+  const errEl = document.getElementById('email-error');
+  if(!name || !email || !email.includes('@') || !email.includes('.')){
+    errEl.style.display='block';
+    return;
+  }
+  errEl.style.display='none';
+  state.name  = name;
+  state.email = email;
+  const btn = document.getElementById('send-otp-btn');
+  btn.textContent='Sending…';
+  btn.disabled=true;
+
+  const code = Math.floor(100000+Math.random()*900000).toString();
+  state.otp = code;
+  state.otpExpiry = Date.now() + 10*60*1000;
+  state.otpAttempts = 0;
+
+  // NOTE: Update your EmailJS template to use these variables:
+  // Subject: "Your CXO Simulabs verification code"
+  // Body: "Hi {{to_name}}, your verification code for {{sim_name}} is: {{otp}}
+  //        This code expires in 10 minutes. Do not share it.
+  //        — CXO Simulabs Team | cxosimulabs.com"
+  emailjs.send(EJS_SERVICE, EJS_TEMPLATE, {
+    to_name: name,
+    to_email: email,
+    otp: code,
+    sim_name: 'CPO Simulation 11: Duolingo',
+    message: `Hi ${name},\n\nYour CXO Simulabs verification code for CPO Simulation 11 (Duolingo) is:\n\n${code}\n\nThis code expires in 10 minutes. Do not share it with anyone.\n\n— CXO Simulabs Team\ncxosimulabs.com`
+  }).then(()=>{
+    gtag('event','otp_requested',{sim:'CPO-SIM-11-Duolingo'});
+    localStorage.setItem(LS.name, name);
+    localStorage.setItem(LS.email, email);
+    document.getElementById('otp-email-display').textContent = email;
+    showPhase('otp');
+    startOTPTimer();
+  }).catch(()=>{
+    gtag('event','otp_failed',{sim:'CPO-SIM-11-Duolingo'});
+    btn.textContent='Send Verification Code →';
+    btn.disabled=false;
+    errEl.textContent='Failed to send code. Please try again.';
+    errEl.style.display='block';
+  });
+}
+
+function startOTPTimer(){
+  clearInterval(state.timerInterval);
+  state.timerInterval = setInterval(()=>{
+    const remaining = Math.max(0, state.otpExpiry - Date.now());
+    const m = Math.floor(remaining/60000);
+    const s = Math.floor((remaining%60000)/1000);
+    const el = document.getElementById('otp-timer');
+    if(el) el.textContent = `${m}:${s.toString().padStart(2,'0')}`;
+    if(remaining===0){ clearInterval(state.timerInterval); }
+  },1000);
+}
+
+function verifyOTP(){
+  const input = document.getElementById('input-otp').value.trim();
+  const errEl = document.getElementById('otp-error');
+  const okEl  = document.getElementById('otp-success');
+  errEl.style.display='none';
+  if(Date.now() > state.otpExpiry){
+    errEl.textContent='Code expired. Please request a new one.';
+    errEl.style.display='block';
+    return;
+  }
+  if(input !== state.otp){
+    state.otpAttempts++;
+    errEl.style.display='block';
+    return;
+  }
+  clearInterval(state.timerInterval);
+  okEl.style.display='block';
+  gtag('event','email_verified',{sim:'CPO-SIM-11-Duolingo'});
+  setTimeout(()=>{
+    document.getElementById('attempt-badge-display').textContent = `🎯 Attempt ${state.currentAttempt} of 2`;
+    showPhase('intro');
+  },800);
+}
+
+function resendOTP(){
+  showPhase('email');
+  document.getElementById('input-name').value = state.name;
+  document.getElementById('input-email').value = state.email;
+}
+
+// ─── SIMULATION ───────────────────────────────────────────
+function startSim(){
+  const questions = Q[state.currentAttempt];
+  state.currentQ = 0;
+  state.answers  = [];
+  state.totalScore = 0;
+  state.maxScore   = questions.reduce((sum,q)=>sum+Math.max(...q.options.map(o=>o.points)),0);
+  gtag('event','sim_started',{sim:'CPO-SIM-11-Duolingo',attempt:state.currentAttempt});
+  showPhase('questions');
+  renderQuestion();
+}
+
+function renderQuestion(){
+  const questions = Q[state.currentAttempt];
+  const q = questions[state.currentQ];
+  const total = questions.length;
+  const qNum  = state.currentQ+1;
+
+  document.getElementById('q-progress-label').textContent = `Question ${qNum} of ${total}`;
+  document.getElementById('q-score-label').textContent = `Score: ${state.totalScore}`;
+  document.getElementById('progress-fill').style.width = `${((qNum-1)/total)*100}%`;
+
+  // Render scenario with bold headings
+  const scenarioEl = document.getElementById('q-scenario');
+  scenarioEl.innerHTML = q.scenario.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/\n/g,'<br>');
+
+  document.getElementById('q-question').textContent = q.question;
+
+  const optionsEl = document.getElementById('q-options');
+  optionsEl.innerHTML = '';
+  q.options.forEach((opt,i)=>{
+    const div = document.createElement('div');
+    div.className='option';
+    div.textContent=opt.text;
+    div.onclick=()=>selectOption(i);
+    optionsEl.appendChild(div);
+  });
+
+  document.getElementById('q-feedback').style.display='none';
+  document.getElementById('next-btn').style.display='none';
+}
+
+function selectOption(idx){
+  const questions = Q[state.currentAttempt];
+  const q = questions[state.currentQ];
+  const chosen = q.options[idx];
+  const maxPts = Math.max(...q.options.map(o=>o.points));
+
+  // Lock all options — no color change, just prevent re-clicking
+  document.querySelectorAll('.option').forEach(el=>el.classList.add('locked'));
+
+  state.answers.push({q:state.currentQ, chosen:idx, points:chosen.points, maxPts, feedback:chosen.feedback, questionText:q.question});
+  state.totalScore += chosen.points;
+  document.getElementById('q-score-label').textContent = `Score: ${state.totalScore}`;
+
+  // Feedback is revealed at the end — just show Next button
+  document.getElementById('q-feedback').style.display='none';
+  document.getElementById('next-btn').style.display='inline-block';
+  document.getElementById('next-btn').textContent =
+    state.currentQ < questions.length-1 ? 'Next Question →' : 'See My Results →';
+}
+
+function nextQuestion(){
+  const questions = Q[state.currentAttempt];
+  if(state.currentQ < questions.length-1){
+    state.currentQ++;
+    renderQuestion();
+    document.getElementById('phase-questions').querySelector('.q-wrap').scrollTop=0;
+    window.scrollTo(0,0);
+  } else {
+    showResults();
+  }
+}
+
+// ─── RESULTS ──────────────────────────────────────────────
+function showResults(){
+  const pct = Math.round((state.totalScore/state.maxScore)*100);
+  const isPreview = new URLSearchParams(location.search).get('preview')==='true' || !!document.getElementById('founder-badge');
+  if(!isPreview){
+    const attemptsDone = parseInt(localStorage.getItem(LS.attempts)||'0') + 1;
+    localStorage.setItem(LS.attempts, attemptsDone.toString());
+    const scores = JSON.parse(localStorage.getItem(LS.scores)||'[]');
+    scores.push({attempt:state.currentAttempt, score:state.totalScore, pct, date:new Date().toISOString()});
+    localStorage.setItem(LS.scores, JSON.stringify(scores));
+  }
+
+  const tier = pct>=90?'Strategic Mastery':pct>=75?'Applied Proficiency':pct>=60?'Core Competency':'Foundational Understanding';
+  gtag('event','sim_completed',{sim:'CPO-SIM-11-Duolingo',attempt:state.currentAttempt,score_pct:pct,tier:tier});
+  const tierClass = pct>=90?'tier-mastery':pct>=75?'tier-proficiency':pct>=60?'tier-competency':'tier-foundational';
+  const tierFeedback = {
+    'Strategic Mastery':'Outstanding. You demonstrated the kind of nuanced, first-principles thinking that defines exceptional product leaders.',
+    'Applied Proficiency':'Strong performance. You understand the core frameworks and apply them well. Focus on the questions you missed to sharpen your edge.',
+    'Core Competency':'Good foundations. You got the basics right but there are gaps in some advanced areas. Review the feedback on your lowest-scoring answers.',
+    'Foundational Understanding':'A learning opportunity. The feedback on each question contains the mental models you need. Try Attempt 2 with fresh perspective.'
+  }[tier];
+
+  document.getElementById('results-heading').textContent = `Your Results — Attempt ${state.currentAttempt}`;
+  document.getElementById('result-pct').textContent = pct+'%';
+  document.getElementById('result-score-label').textContent = `${state.totalScore} / ${state.maxScore} pts`;
+
+  const badge = document.getElementById('tier-badge');
+  badge.textContent = tier;
+  badge.className = 'tier-badge '+tierClass;
+  document.getElementById('tier-feedback').textContent = tierFeedback;
+
+  drawScoreRing(pct);
+
+  // Breakdown with full feedback
+  const bd = document.getElementById('q-breakdown');
+  const questions = Q[state.currentAttempt];
+  bd.innerHTML = state.answers.map((a,i)=>{
+    const pctQ = Math.round((a.points/a.maxPts)*100);
+    const dotClass = pctQ>=80?'dot-high':pctQ>=50?'dot-mid':'dot-low';
+    const borderColor = pctQ>=80?'#059669':pctQ>=50?'#d97706':'#dc2626';
+    const chosen = questions[i].options[a.chosen];
+    return `<div style="border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+        <div class="q-dot ${dotClass}"></div>
+        <span style="font-weight:600;font-size:.88em;flex:1;">Q${i+1}: ${questions[i].question}</span>
+        <span style="font-weight:700;font-size:.88em;color:${borderColor};">${a.points}/${a.maxPts}</span>
+      </div>
+      <div style="font-size:.82em;color:var(--muted);margin-bottom:8px;">Your answer: <em>${chosen.text}</em></div>
+      <div style="font-size:.85em;color:#374151;line-height:1.7;background:var(--light);border-left:3px solid ${borderColor};border-radius:0 6px 6px 0;padding:10px 14px;">${a.feedback}</div>
+    </div>`;
+  }).join('');
+
+  // ── Cumulative competency analysis ──
+  const compScores = state.answers.map((a,i)=>({
+    name: COMP_MAP[i]?COMP_MAP[i].name:`Competency ${i+1}`,
+    pct:  Math.round((a.points/a.maxPts)*100)
+  }));
+
+  document.getElementById('competency-bars').innerHTML = compScores.map(c=>{
+    const color = c.pct>=80?'#059669':c.pct>=50?'#d97706':'#dc2626';
+    return `<div class="comp-bar-row">
+      <div class="comp-label">${c.name}</div>
+      <div class="comp-track"><div class="comp-fill" style="width:${c.pct}%;background:${color};"></div></div>
+      <div class="comp-pct">${c.pct}%</div>
+    </div>`;
+  }).join('');
+
+  const sorted = [...compScores].sort((a,b)=>b.pct-a.pct);
+  const strengths = sorted.slice(0,2);
+  const gaps = sorted.slice(-2);
+
+  document.getElementById('strength-tags').innerHTML = strengths.map(s=>`<span class="strength-tag">${s.name}</span>`).join('');
+  document.getElementById('gap-tags').innerHTML = gaps.map(g=>`<span class="gap-tag">${g.name}</span>`).join('');
+
+  const insightText = pct>=90
+    ? `Outstanding across the board. Your ${strengths[0].name} and ${strengths[1].name} scores reflect the kind of first-principles thinking that defines exceptional product leaders. You consistently chose depth over speed, long-term over short-term, and principle over convenience.`
+    : pct>=75
+    ? `Strong CPO instincts. You excelled in ${strengths[0].name} and ${strengths[1].name}, showing real commercial and product maturity. Your development areas — ${gaps[0].name} and ${gaps[1].name} — are exactly where the highest-impact CPOs differentiate themselves as they scale.`
+    : pct>=60
+    ? `Solid foundations with clear growth areas. You showed genuine competency in ${strengths[0].name} and ${strengths[1].name}, but the gaps in ${gaps[0].name} and ${gaps[1].name} reveal where your thinking can deepen. Review the expert feedback on your lowest-scoring answers — those mental models are what separates good from great at CPO level.`
+    : `This simulation is designed to challenge. Your instincts in ${strengths[0].name} showed promise. The gaps in ${gaps[0].name} and ${gaps[1].name} reveal where CPO-level thinking diverges most sharply from general product management. Use the feedback from this round to recalibrate — Attempt 2 gives you fresh scenarios to apply these lessons.`;
+
+  document.getElementById('insight-text').textContent = insightText;
+
+  // Show "next sim" banner and attempt 2 prompt
+  const isPreview2 = new URLSearchParams(location.search).get('preview')==='true' || !!document.getElementById('founder-badge');
+  if(isPreview2){
+    document.getElementById('attempt2-prompt').style.display='block';
+    document.getElementById('next-sim-banner').style.display='none';
+  } else if(state.currentAttempt===1){
+    document.getElementById('attempt2-prompt').style.display='block';
+    document.getElementById('next-sim-banner').style.display='none';
+  } else {
+    document.getElementById('attempt2-prompt').style.display='none';
+    document.getElementById('next-sim-banner').style.display='flex';
+  }
+
+  drawCertificate(pct, tier);
+  drawBadge(pct, tier);
+  showPhase('results');
+}
+
+function startAttempt2(){
+  state.currentAttempt = 2;
+  showPhase('intro');
+  document.getElementById('attempt-badge-display').textContent = '🎯 Attempt 2 of 2';
+}
+
+// ─── SCORE RING ───────────────────────────────────────────
+function drawScoreRing(pct){
+  const canvas = document.getElementById('scoreRingCanvas');
+  const ctx = canvas.getContext('2d');
+  const cx=80, cy=80, r=65, lw=12;
+  ctx.clearRect(0,0,160,160);
+  ctx.beginPath(); ctx.arc(cx,cy,r,0,Math.PI*2);
+  ctx.strokeStyle='#e5e7eb'; ctx.lineWidth=lw; ctx.stroke();
+  const angle = (pct/100)*Math.PI*2 - Math.PI/2;
+  ctx.beginPath(); ctx.arc(cx,cy,r,-Math.PI/2,angle);
+  ctx.strokeStyle = pct>=90?'#16a34a':pct>=75?'#2563eb':pct>=60?'#d97706':'#dc2626';
+  ctx.lineWidth=lw; ctx.lineCap='round'; ctx.stroke();
+}
+
+// ─── SHARED HELPERS ───────────────────────────────────────
+function drawLogoText(ctx, x, y, size='bold 15px'){
+  ctx.font=`${size} Inter, Arial, sans-serif`;
+  ctx.textAlign='left';
+  const cxoW=ctx.measureText('CXO').width;
+  ctx.fillStyle='#1a1a2e'; ctx.fillText('CXO',x,y);
+  ctx.fillStyle='#e23744'; ctx.fillText(' Simulabs',x+cxoW,y);
+}
+function centeredLogo(ctx, W, y, size='bold 15px'){
+  ctx.font=`${size} Inter, Arial, sans-serif`;
+  const total=ctx.measureText('CXO Simulabs').width;
+  const cxoW=ctx.measureText('CXO').width;
+  const sx=W/2-total/2;
+  ctx.fillStyle='#1a1a2e'; ctx.fillText('CXO',sx,y);
+  ctx.fillStyle='#e23744'; ctx.fillText(' Simulabs',sx+cxoW,y);
+}
+
+// ─── CERTIFICATE ──────────────────────────────────────────
+function drawCertificate(pct, tier){
+  const canvas = document.getElementById('certCanvas');
+  const ctx = canvas.getContext('2d');
+  const W=1200, H=850;
+  canvas.width=W; canvas.height=H;
+  ctx.clearRect(0,0,W,H);
+  const CX=W/2; // center x for alignment
+  const gold='#c9a84c';
+
+  // ── Dark gradient background ──
+  const bg=ctx.createLinearGradient(0,0,W,H);
+  bg.addColorStop(0,'#0c1221'); bg.addColorStop(0.5,'#131b2e'); bg.addColorStop(1,'#1a1a2e');
+  ctx.fillStyle=bg; ctx.fillRect(0,0,W,H);
+
+  // ── Subtle dot grid ──
+  ctx.fillStyle='rgba(255,255,255,0.018)';
+  for(let x=0;x<W;x+=40)for(let y=0;y<H;y+=40){ctx.beginPath();ctx.arc(x,y,1.2,0,Math.PI*2);ctx.fill();}
+
+  // ── Gold accent bar at top ──
+  const topGrad=ctx.createLinearGradient(0,0,W,0);
+  topGrad.addColorStop(0,'#c9a84c'); topGrad.addColorStop(0.5,'#e8d48b'); topGrad.addColorStop(1,'#c9a84c');
+  ctx.fillStyle=topGrad; ctx.fillRect(0,0,W,5);
+
+  // ── Border frame ──
+  ctx.strokeStyle='rgba(201,168,76,0.25)'; ctx.lineWidth=1;
+  ctx.strokeRect(24,24,W-48,H-48);
+
+  // ── Corner ornaments ──
+  [[26,26,1,1],[W-26,26,-1,1],[26,H-26,1,-1],[W-26,H-26,-1,-1]].forEach(([x,y,sx,sy])=>{
+    ctx.strokeStyle='rgba(201,168,76,0.4)'; ctx.lineWidth=1.5;
+    ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+sx*32,y);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x,y+sy*32);ctx.stroke();
+  });
+
+  // ═══════════════════════════════════════════════════════════
+  // SECTION 1: HEADER — Logo + Track (y: 60–120)
+  // ═══════════════════════════════════════════════════════════
+  ctx.textAlign='left';
+  ctx.font='bold 26px Inter, Arial, sans-serif';
+  const cxoW=ctx.measureText('CXO').width;
+  const slW=ctx.measureText(' Simulabs').width;
+  const logoX=CX-(cxoW+slW)/2;
+  ctx.fillStyle='#ffffff'; ctx.fillText('CXO',logoX,72);
+  ctx.fillStyle='#e23744'; ctx.fillText(' Simulabs',logoX+cxoW,72);
+
+  ctx.textAlign='center';
+  ctx.font='600 11px Inter, Arial, sans-serif';
+  ctx.fillStyle=gold; ctx.letterSpacing='3px';
+  ctx.fillText('CPO TRACK  ·  SIMULATION 11',CX,98);
+  ctx.letterSpacing='0';
+
+  // Gold divider with diamond
+  ctx.strokeStyle='rgba(201,168,76,0.3)'; ctx.lineWidth=0.8;
+  ctx.beginPath();ctx.moveTo(CX-110,116);ctx.lineTo(CX+110,116);ctx.stroke();
+  ctx.fillStyle=gold;
+  ctx.beginPath();ctx.moveTo(CX,112);ctx.lineTo(CX+4,116);ctx.lineTo(CX,120);ctx.lineTo(CX-4,116);ctx.closePath();ctx.fill();
+
+  // ═══════════════════════════════════════════════════════════
+  // SECTION 2: TITLE (y: 140–160)
+  // ═══════════════════════════════════════════════════════════
+  ctx.letterSpacing='6px';
+  ctx.font='600 13px Inter, Arial, sans-serif';
+  ctx.fillStyle=gold;
+  ctx.fillText('SIMULATION COMPLETION RECORD',CX,152);
+  ctx.letterSpacing='0';
+
+  // ═══════════════════════════════════════════════════════════
+  // SECTION 3: NAME (y: 185–290)
+  // ═══════════════════════════════════════════════════════════
+  ctx.font='italic 15px Georgia, serif';
+  ctx.fillStyle='rgba(255,255,255,0.4)';
+  ctx.fillText('This certifies that',CX,200);
+
+  const name=state.name||state.email;
+  ctx.font='bold 52px Georgia, "Times New Roman", serif';
+  ctx.fillStyle='#ffffff';
+  ctx.fillText(name,CX,260);
+
+  // Gold fading underline
+  const nw=Math.min(ctx.measureText(name).width+60,W-200);
+  const ulGrad=ctx.createLinearGradient(CX-nw/2,0,CX+nw/2,0);
+  ulGrad.addColorStop(0,'rgba(201,168,76,0)'); ulGrad.addColorStop(0.3,'rgba(201,168,76,0.45)');
+  ulGrad.addColorStop(0.5,'rgba(201,168,76,0.65)'); ulGrad.addColorStop(0.7,'rgba(201,168,76,0.45)');
+  ulGrad.addColorStop(1,'rgba(201,168,76,0)');
+  ctx.strokeStyle=ulGrad; ctx.lineWidth=1.2;
+  ctx.beginPath();ctx.moveTo(CX-nw/2,275);ctx.lineTo(CX+nw/2,275);ctx.stroke();
+
+  // ═══════════════════════════════════════════════════════════
+  // SECTION 4: ACHIEVEMENT — Competency HERO, company secondary (y: 300–400)
+  // ═══════════════════════════════════════════════════════════
+  ctx.font='italic 14px Georgia, serif';
+  ctx.fillStyle='rgba(255,255,255,0.38)';
+  ctx.fillText('has completed a learning simulation exploring',CX,316);
+
+  // COMPETENCY = THE HERO
+  ctx.font='bold 28px Inter, Arial, sans-serif';
+  ctx.fillStyle='#ffffff';
+  ctx.fillText('Data Storytelling & Presentations',CX,358);
+
+  // Company = secondary context
+  ctx.font='15px Inter, Arial, sans-serif';
+  ctx.fillStyle='rgba(255,255,255,0.35)';
+  ctx.fillText('through the Duolingo case simulation',CX,390);
+
+  // ═══════════════════════════════════════════════════════════
+  // SECTION 5: METRICS — Score / Tier / Date (y: 430–560)
+  // ═══════════════════════════════════════════════════════════
+  // Horizontal divider above metrics
+  const divGrad1=ctx.createLinearGradient(100,0,W-100,0);
+  divGrad1.addColorStop(0,'rgba(201,168,76,0)'); divGrad1.addColorStop(0.2,'rgba(201,168,76,0.2)');
+  divGrad1.addColorStop(0.5,'rgba(201,168,76,0.3)'); divGrad1.addColorStop(0.8,'rgba(201,168,76,0.2)');
+  divGrad1.addColorStop(1,'rgba(201,168,76,0)');
+  ctx.strokeStyle=divGrad1; ctx.lineWidth=0.6;
+  ctx.beginPath();ctx.moveTo(100,420);ctx.lineTo(W-100,420);ctx.stroke();
+
+  const metricsY=488; // vertical center for all 3 columns
+  const colL=240, colC=CX, colR=W-240; // 3 evenly spaced columns
+  const ringColor=pct>=90?'#4ade80':pct>=75?'#60a5fa':pct>=60?'#fbbf24':'#f87171';
+
+  // — SCORE (left) — with ring
+  const ringR=58, ringLw=8;
+  ctx.beginPath();ctx.arc(colL,metricsY,ringR,0,Math.PI*2);
+  ctx.strokeStyle='rgba(255,255,255,0.06)'; ctx.lineWidth=ringLw; ctx.stroke();
+  const angle=(pct/100)*Math.PI*2-Math.PI/2;
+  ctx.beginPath();ctx.arc(colL,metricsY,ringR,-Math.PI/2,angle);
+  ctx.strokeStyle=ringColor; ctx.lineWidth=ringLw; ctx.lineCap='round'; ctx.stroke();
+  ctx.lineCap='butt';
+  ctx.font='bold 44px Inter, Arial, sans-serif';
+  ctx.fillStyle='#ffffff';
+  ctx.fillText(pct+'%',colL,metricsY+14);
+  ctx.font='600 9px Inter, Arial, sans-serif';
+  ctx.fillStyle='rgba(255,255,255,0.3)'; ctx.letterSpacing='2px';
+  ctx.fillText('SCORE',colL,metricsY+38);
+  ctx.letterSpacing='0';
+
+  // — TIER (center) —
+  ctx.font='bold 26px Inter, Arial, sans-serif';
+  ctx.fillStyle=ringColor;
+  ctx.fillText(tier,colC,metricsY+8);
+  ctx.font='600 9px Inter, Arial, sans-serif';
+  ctx.fillStyle='rgba(255,255,255,0.3)'; ctx.letterSpacing='2px';
+  ctx.fillText('PERFORMANCE TIER',colC,metricsY+32);
+  ctx.letterSpacing='0';
+
+  // — DATE (right) —
+  const d=new Date();
+  const dateStr=d.toLocaleString('default',{month:'long'})+' '+d.getDate()+', '+d.getFullYear();
+  ctx.font='bold 20px Inter, Arial, sans-serif';
+  ctx.fillStyle='#ffffff';
+  ctx.fillText(dateStr,colR,metricsY+8);
+  ctx.font='600 9px Inter, Arial, sans-serif';
+  ctx.fillStyle='rgba(255,255,255,0.3)'; ctx.letterSpacing='2px';
+  ctx.fillText('DATE ISSUED',colR,metricsY+32);
+  ctx.letterSpacing='0';
+
+  // Vertical separators between columns
+  ctx.strokeStyle='rgba(201,168,76,0.15)'; ctx.lineWidth=0.8;
+  const sepTop=metricsY-52, sepBot=metricsY+48;
+  ctx.beginPath();ctx.moveTo((colL+colC)/2,sepTop);ctx.lineTo((colL+colC)/2,sepBot);ctx.stroke();
+  ctx.beginPath();ctx.moveTo((colC+colR)/2,sepTop);ctx.lineTo((colC+colR)/2,sepBot);ctx.stroke();
+
+  // Horizontal divider below metrics
+  ctx.strokeStyle=divGrad1; ctx.lineWidth=0.6;
+  ctx.beginPath();ctx.moveTo(100,556);ctx.lineTo(W-100,556);ctx.stroke();
+
+  // ═══════════════════════════════════════════════════════════
+  // SECTION 6: COMPETENCIES ASSESSED (y: 580–680)
+  // ═══════════════════════════════════════════════════════════
+  ctx.letterSpacing='2.5px';
+  ctx.font='600 9px Inter, Arial, sans-serif';
+  ctx.fillStyle=gold;
+  ctx.fillText('COMPETENCIES ASSESSED',CX,586);
+  ctx.letterSpacing='0';
+
+  const comps=COMP_MAP.map(c=>c.name);
+  ctx.font='11.5px Inter, Arial, sans-serif';
+  ctx.fillStyle='rgba(255,255,255,0.45)';
+  // 2 rows of 5, evenly spaced
+  const compStartX=160, compSpacing=220;
+  comps.slice(0,5).forEach((c,i)=>{ctx.fillText(c,compStartX+i*compSpacing,614);});
+  comps.slice(5,10).forEach((c,i)=>{ctx.fillText(c,compStartX+i*compSpacing,640);});
+
+  // ═══════════════════════════════════════════════════════════
+  // SECTION 7: FOOTER (y: 780–830)
+  // ═══════════════════════════════════════════════════════════
+  // Seal (bottom-right)
+  const sealX=W-90, sealY=H-85, sealR=32;
+  ctx.strokeStyle='rgba(201,168,76,0.3)'; ctx.lineWidth=1.2;
+  ctx.beginPath();ctx.arc(sealX,sealY,sealR,0,Math.PI*2);ctx.stroke();
+  ctx.strokeStyle='rgba(201,168,76,0.12)'; ctx.lineWidth=0.6;
+  ctx.beginPath();ctx.arc(sealX,sealY,sealR-6,0,Math.PI*2);ctx.stroke();
+  ctx.fillStyle='rgba(201,168,76,0.04)';
+  ctx.beginPath();ctx.arc(sealX,sealY,sealR,0,Math.PI*2);ctx.fill();
+  ctx.font='bold 7px Inter, Arial, sans-serif';
+  ctx.fillStyle=gold; ctx.letterSpacing='1.5px';
+  ctx.fillText('COMPLETED',sealX,sealY-6);
+  ctx.letterSpacing='0';
+  ctx.font='bold 18px Arial';
+  ctx.fillStyle=gold;
+  ctx.fillText('✓',sealX,sealY+10);
+
+  // Footer divider
+  const footGrad=ctx.createLinearGradient(50,0,W-50,0);
+  footGrad.addColorStop(0,'rgba(201,168,76,0)'); footGrad.addColorStop(0.3,'rgba(201,168,76,0.2)');
+  footGrad.addColorStop(0.5,'rgba(201,168,76,0.3)'); footGrad.addColorStop(0.7,'rgba(201,168,76,0.2)');
+  footGrad.addColorStop(1,'rgba(201,168,76,0)');
+  ctx.strokeStyle=footGrad; ctx.lineWidth=0.6;
+  ctx.beginPath();ctx.moveTo(50,H-55);ctx.lineTo(W-50,H-55);ctx.stroke();
+
+  // Footer text
+  ctx.textAlign='left';
+  ctx.font='12px Inter, Arial, sans-serif';
+  ctx.fillStyle='rgba(255,255,255,0.5)';
+  ctx.fillText('© 2026 CXO Simulabs  ·  Not a professional certification  ·  Not affiliated with Duolingo Inc.',55,H-32);
+  ctx.textAlign='right';
+  ctx.fillStyle='rgba(255,255,255,0.5)';
+  ctx.font='bold 11px Inter, Arial, sans-serif';
+  ctx.fillText('www.cxosimulabs.com',W-55,H-32);
+}
+
+// ─── INSTAGRAM BADGE ──────────────────────────────────────
+function drawBadge(pct, tier){
+  const canvas=document.getElementById('badgeCanvas');
+  const ctx=canvas.getContext('2d');
+  const S=1080;
+  ctx.clearRect(0,0,S,S);
+  const C=S/2; // center
+  const gold='#c9a84c';
+
+  // ── Dark gradient background ──
+  const bg=ctx.createLinearGradient(0,0,S,S);
+  bg.addColorStop(0,'#0c1221'); bg.addColorStop(0.5,'#131b2e'); bg.addColorStop(1,'#1a1a2e');
+  ctx.fillStyle=bg; ctx.fillRect(0,0,S,S);
+
+  // ── Subtle dot grid ──
+  ctx.fillStyle='rgba(255,255,255,0.018)';
+  for(let x=0;x<S;x+=44)for(let y=0;y<S;y+=44){ctx.beginPath();ctx.arc(x,y,1.2,0,Math.PI*2);ctx.fill();}
+
+  // ── Gold bar top ──
+  const topGrad=ctx.createLinearGradient(0,0,S,0);
+  topGrad.addColorStop(0,'#c9a84c'); topGrad.addColorStop(0.5,'#e8d48b'); topGrad.addColorStop(1,'#c9a84c');
+  ctx.fillStyle=topGrad; ctx.fillRect(0,0,S,6);
+
+  // ── Border + corners ──
+  ctx.strokeStyle='rgba(201,168,76,0.25)'; ctx.lineWidth=1;
+  ctx.strokeRect(24,24,S-48,S-48);
+  [[26,26,1,1],[S-26,26,-1,1],[26,S-26,1,-1],[S-26,S-26,-1,-1]].forEach(([x,y,sx,sy])=>{
+    ctx.strokeStyle='rgba(201,168,76,0.4)'; ctx.lineWidth=1.5;
+    ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+sx*28,y);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x,y+sy*28);ctx.stroke();
+  });
+
+  // ── Logo ──
+  ctx.textAlign='left';
+  ctx.font='bold 36px Inter, Arial, sans-serif';
+  const cW=ctx.measureText('CXO').width;
+  const sW=ctx.measureText(' Simulabs').width;
+  const lStart=C-(cW+sW)/2;
+  ctx.fillStyle='#ffffff'; ctx.fillText('CXO',lStart,82);
+  ctx.fillStyle='#e23744'; ctx.fillText(' Simulabs',lStart+cW,82);
+
+  // ── Track label ──
+  ctx.textAlign='center';
+  ctx.font='600 13px Inter, Arial, sans-serif';
+  ctx.fillStyle=gold; ctx.letterSpacing='3px';
+  ctx.fillText('CPO TRACK  ·  SIMULATION 11',C,114);
+  ctx.letterSpacing='0';
+
+  // ── Gold divider ──
+  ctx.strokeStyle='rgba(201,168,76,0.3)'; ctx.lineWidth=0.8;
+  ctx.beginPath();ctx.moveTo(C-100,134);ctx.lineTo(C+100,134);ctx.stroke();
+  ctx.fillStyle=gold;
+  ctx.beginPath();ctx.moveTo(C,130);ctx.lineTo(C+4,134);ctx.lineTo(C,138);ctx.lineTo(C-4,134);ctx.closePath();ctx.fill();
+
+  // ── Competency HERO ──
+  ctx.font='bold 36px Inter, Arial, sans-serif';
+  ctx.fillStyle='#ffffff';
+  ctx.fillText('Product',C,186);
+  ctx.font='bold 36px Inter, Arial, sans-serif';
+  ctx.fillStyle='rgba(255,255,255,0.5)';
+  ctx.fillText('Data Storytelling',C,228);
+
+  // ── Company context ──
+  ctx.font='16px Inter, Arial, sans-serif';
+  ctx.fillStyle='rgba(255,255,255,0.3)';
+  ctx.fillText('Duolingo case simulation',C,262);
+
+  // ── Name ──
+  const name=state.name||state.email;
+  ctx.font='bold 40px Georgia, "Times New Roman", serif';
+  ctx.fillStyle='#ffffff';
+  ctx.fillText(name,C,320);
+  // Gold underline
+  const nw2=Math.min(ctx.measureText(name).width+40,S-120);
+  const ulGrad=ctx.createLinearGradient(C-nw2/2,0,C+nw2/2,0);
+  ulGrad.addColorStop(0,'rgba(201,168,76,0)'); ulGrad.addColorStop(0.3,'rgba(201,168,76,0.4)');
+  ulGrad.addColorStop(0.5,'rgba(201,168,76,0.55)'); ulGrad.addColorStop(0.7,'rgba(201,168,76,0.4)');
+  ulGrad.addColorStop(1,'rgba(201,168,76,0)');
+  ctx.strokeStyle=ulGrad; ctx.lineWidth=1;
+  ctx.beginPath();ctx.moveTo(C-nw2/2,334);ctx.lineTo(C+nw2/2,334);ctx.stroke();
+
+  // ── Score ring ──
+  const ringCY=560, r=170, lw=22;
+  ctx.beginPath();ctx.arc(C,ringCY,r,0,Math.PI*2);
+  ctx.strokeStyle='rgba(255,255,255,0.06)'; ctx.lineWidth=lw; ctx.stroke();
+  const angle=(pct/100)*Math.PI*2-Math.PI/2;
+  const ringColor=pct>=90?'#4ade80':pct>=75?'#60a5fa':pct>=60?'#fbbf24':'#f87171';
+  ctx.beginPath();ctx.arc(C,ringCY,r,-Math.PI/2,angle);
+  ctx.strokeStyle=ringColor; ctx.lineWidth=lw; ctx.lineCap='round'; ctx.stroke();
+  ctx.lineCap='butt';
+
+  // Score text
+  ctx.font='bold 120px Inter, Arial, sans-serif';
+  ctx.fillStyle='#ffffff';
+  ctx.fillText(pct+'%',C,ringCY+40);
+
+  // Tier
+  ctx.font='bold 30px Inter, Arial, sans-serif';
+  ctx.fillStyle=ringColor;
+  ctx.fillText(tier,C,ringCY+88);
+
+  // ── Footer ──
+  const fDivGrad=ctx.createLinearGradient(40,0,S-40,0);
+  fDivGrad.addColorStop(0,'rgba(201,168,76,0)'); fDivGrad.addColorStop(0.3,'rgba(201,168,76,0.2)');
+  fDivGrad.addColorStop(0.5,'rgba(201,168,76,0.3)'); fDivGrad.addColorStop(0.7,'rgba(201,168,76,0.2)');
+  fDivGrad.addColorStop(1,'rgba(201,168,76,0)');
+  ctx.strokeStyle=fDivGrad; ctx.lineWidth=0.6;
+  ctx.beginPath();ctx.moveTo(40,S-100);ctx.lineTo(S-40,S-100);ctx.stroke();
+
+  // Seal bottom-right
+  const sealX=S-90, sealY=S-58;
+  ctx.strokeStyle='rgba(201,168,76,0.28)'; ctx.lineWidth=1;
+  ctx.beginPath();ctx.arc(sealX,sealY,22,0,Math.PI*2);ctx.stroke();
+  ctx.font='bold 14px Arial'; ctx.fillStyle=gold;
+  ctx.fillText('✓',sealX,sealY+5);
+
+  ctx.font='bold 22px Inter, Arial, sans-serif';
+  ctx.fillStyle='rgba(255,255,255,0.45)';
+  ctx.fillText('www.cxosimulabs.com',C,S-52);
+
+  ctx.font='14px Inter, Arial, sans-serif';
+  ctx.fillStyle='rgba(255,255,255,0.2)';
+  ctx.fillText('Try the free simulation →',C,S-28);
+}
+
+function getPctTier(){
+  return {
+    pct: parseInt(document.getElementById('result-pct').textContent),
+    tier: document.getElementById('tier-badge').textContent
+  };
+}
+function downloadCert(){
+  const {pct,tier}=getPctTier();
+  gtag('event','cert_downloaded',{sim:'CPO-SIM-11-Duolingo',score_pct:pct,tier:tier});
+  const canvas=document.getElementById('certCanvas');
+  canvas.width=1200; canvas.height=850;
+  drawCertificate(pct,tier);
+  const link=document.createElement('a');
+  link.download=`CXO-Simulabs-Certificate-${(state.name||'').replace(/\s/g,'-')}.png`;
+  link.href=canvas.toDataURL('image/png'); link.click();
+}
+function downloadBadge(){
+  const {pct,tier}=getPctTier();
+  gtag('event','badge_downloaded',{sim:'CPO-SIM-11-Duolingo',score_pct:pct,tier:tier});
+  const canvas=document.getElementById('badgeCanvas');
+  drawBadge(pct,tier);
+  const link=document.createElement('a');
+  link.download=`CXO-Simulabs-Badge-${(state.name||'').replace(/\s/g,'-')}.png`;
+  link.href=canvas.toDataURL('image/png'); link.click();
+}
+function shareLinkedIn(){
+  gtag('event','share_linkedin',{sim:'CPO-SIM-11-Duolingo'});
+  const {pct,tier}=getPctTier();
+  const text=encodeURIComponent(`I just scored ${pct}% (${tier}) on the Duolingo Data Storytelling Simulation by CXO Simulabs — 10 real product decisions, expert feedback.\n\nTry it free: https://cxosimulabs.com\n\n#ProductManagement #CPO #CXOSimulabs #DataStorytelling`);
+  window.open(`https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcxosimulabs.com&summary=${text}`,'_blank');
+}
+function shareTwitter(){
+  const {pct,tier}=getPctTier();
+  const text=encodeURIComponent(`Just scored ${pct}% (${tier}) on the Duolingo Data Storytelling Simulation by @CXOSimulabs — 10 real product decisions, expert feedback. Try it free 👇\nhttps://cxosimulabs.com\n#CPO #ProductManagement #DataStorytelling`);
+  window.open(`https://twitter.com/intent/tweet?text=${text}`,'_blank');
+}
+function shareWhatsApp(){
+  const {pct,tier}=getPctTier();
+  const text=encodeURIComponent(`I scored ${pct}% (${tier}) on the Duolingo Data Storytelling Simulation by CXO Simulabs — 10 real product decisions with expert feedback. Try it free: https://cxosimulabs.com`);
+  window.open(`https://wa.me/?text=${text}`,'_blank');
+}
+function copyLink(){
+  navigator.clipboard.writeText('https://cxosimulabs.com').then(()=>{
+    const btn=document.getElementById('copy-link-btn');
+    btn.textContent='✓ Copied!';
+    setTimeout(()=>btn.textContent='Copy Link',2000);
+  });
+}
+</script>
+</body>
+</html>
